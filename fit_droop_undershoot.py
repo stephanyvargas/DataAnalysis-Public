@@ -35,7 +35,7 @@ def fit_droop(Times, Voltages):
 	stau = result.params['tau'].stderr
 	chi2 = result.chisqr
 	covar_matrix = result.covar
-
+	'''
 	f = open("/home/stephy/ICECUBE/undershoot/20200609/analysis/Amplitudes.txt","a")
 	f.write("%f" % (Directory_board))#Number of board
 	f.write(" ")
@@ -49,8 +49,8 @@ def fit_droop(Times, Voltages):
 	f.write(" ")
 	f.write("%s" % (Batch))#batch num
 	f.write("\r\n")
-	f.close()
-	return  Amp, sAmp, tau, stau, chi2, covar_matrix
+	f.close()'''
+	return  Amp, sAmp, tau, stau, chi2, covar_matrix, max(Voltages), V[150]
 
 
 def fit_under(Times, Voltages):
@@ -87,6 +87,7 @@ def plot_results_droop(time, voltage, amp_d, tau_d, stau_d):
 	V_d = VOLT[mask_droop]
 	T_d_fit = T_d[150:-30]
 	V_d_fit = np.mean(amp_d)*np.exp(-(T_d_fit-T_d_fit[0])/np.mean(tau_d))
+
 	plt.figure(00)
 	plt.ylabel(r'Voltage (mV)')
 	plt.xlabel('Time ($\mu$s)')
@@ -103,6 +104,7 @@ def plot_results_droop(time, voltage, amp_d, tau_d, stau_d):
 	plt.close()
 
 
+
 def plot_results_undershoot(time, voltage, amp_u, tau_u, stau_u):
 	TIME = sum(time)/len(time)
 	VOLT = sum(voltage)/len(voltage)
@@ -113,6 +115,7 @@ def plot_results_undershoot(time, voltage, amp_u, tau_u, stau_u):
 	V_u = VOLT[mask]
 	T_u_fit = T_u[150:-2]
 	V_u_fit = np.mean(amp_u)*np.exp(-(T_u_fit-T_u_fit[0])/np.mean(tau_u))
+
 	plt.figure(00)
 	plt.ylabel(r'Voltage (mV)')
 	plt.xlabel('Time ($\mu$s)')
@@ -128,6 +131,7 @@ def plot_results_undershoot(time, voltage, amp_u, tau_u, stau_u):
 	plt.clf()
 	plt.cla()
 	plt.close()
+	
 
 
 def open_fit_return():
@@ -147,12 +151,14 @@ def open_fit_return():
 	Tau_un = []
 	sTau_un = []
 	X2_un = []
+	V_max = []
+	V150 = []
 	for i in range(0,NumF):
 		data = np.loadtxt(fname=filename[i], delimiter=',', skiprows=25)
 		time = data[:,0]
 		volt = data[:,1]
 		volts = volt - np.mean(volt[0:100]) #Extract the baseline
-		A_d, sA_d, Tau_d, Stau_d, X2_d, covar_matrix_d = fit_droop(time, volts)
+		A_d, sA_d, Tau_d, Stau_d, X2_d, covar_matrix_d, v_max, v150 = fit_droop(time, volts)
 		A_u, sA_u, Tau_u, Stau_u, X2_u, covar_matrix_u = fit_under(time, volts)
 		if Tau_d <1E-4 and Tau_d > 0 and Tau_u <1E-4 and Tau_u > 0:
 			Voltage.append(volts)
@@ -162,12 +168,14 @@ def open_fit_return():
 			Tau_dr.append(Tau_d)
 			sTau_dr.append(Stau_d)
 			X2_dr.append(X2_d)
+			V_max.append(v_max)
+			V150.append(v150)
 			Amp_u.append(A_u)
 			sAmp_u.append(sA_u)
 			Tau_un.append(Tau_u)
 			sTau_un.append(Stau_u)
 			X2_un.append(X2_u)
-	Droop = [Amp_d, sAmp_d, Tau_dr, sTau_dr, X2_dr]
+	Droop = [Amp_d, sAmp_d, Tau_dr, sTau_dr, X2_dr, V_max, V150]
 	Undershoot = [Amp_u, sAmp_u, Tau_un, sTau_un, X2_un]
 	plot_results_droop(Time, Voltage, Droop[0], Droop[2], Droop[3])
 	plot_results_undershoot(Time, Voltage, Undershoot[0], Undershoot[2], Undershoot[3])
@@ -189,7 +197,7 @@ def build_data_frame(Droop, Undershoot):
 	print(fit_data.ndim, fit_data.shape, dir_temp.shape, dir_temp.ndim, data.shape)
 	df = pd.DataFrame(data, columns = ['Channel', 'Directory_temperature', 'Real_temperature',
 		'Batch', 'Amplitude_droop', 'Error_Amplitude_droop', 'Tau_droop', 'Error_Tau_Droop',
-		'chi2_droop', 'Amplitude_undershoot', 'Error_Amplitude_undershoot', 'Tau_undershoot',
+		'chi2_droop', 'Maximum Voltage', 'Maximum Voltage for Fit', 'Amplitude_undershoot', 'Error_Amplitude_undershoot', 'Tau_undershoot',
 		'Error_Tau_undershoot', 'chi2_undershoot'], index = m_idx)
 	return df
 
@@ -201,10 +209,10 @@ def store_df(Droop, Undershoot):
 		previous_df = pd.read_hdf(filename)
 		new_df = df.append(previous_df)
 		new_df.to_hdf(filename, key='new_df', mode='w')
-		return 'The data has been succesfully attached!'
+		print('The data has been succesfully attached!')
 	else:
 		df.to_hdf(filename, key='df', mode='w')
-		return 'A new data frame has been created!'
+		print('A new data frame has been created!')
 
 
 def main():
