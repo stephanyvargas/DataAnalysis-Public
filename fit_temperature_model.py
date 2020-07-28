@@ -33,7 +33,7 @@ def line_fit(x, y):
 
 def temp_fit(x, y):
 	gmodel = Model(model_temp, calc_covar=True)
-	params = gmodel.make_params(A=5, B=40, C=30)#unit [us]
+	params = gmodel.make_params(A=5E-6, B=40E-6, C=30)#unit [us]
 	result = gmodel.fit(y, params, x=x)
 	print(result.fit_report())
 	p_A = result.params['A'].value
@@ -63,12 +63,14 @@ def get_mean_std(temp, tau):
 
 def load_dataframe():
 	'''
-	df == fit droop and undershoot report dataframe (14 variables for the header)
+	df == fit droop and undershoot report dataframe (16 variables for the header)
 	Index(['Channel', 'Directory_temperature', 'Real_temperature', 'Batch',
-       		'Amplitude_droop', 'Error_Amplitude_droop', 'Tau_droop',
-       		'Error_Tau_Droop', 'chi2_droop', 'Amplitude_undershoot',
-       		'Error_Amplitude_undershoot', 'Tau_undershoot', 'Error_Tau_undershoot',
-       		'chi2_undershoot']
+       'Amplitude_droop', 'Error_Amplitude_droop', 'Tau_droop',
+       'Error_Tau_Droop', 'chi2_droop', 'Maximum Voltage',
+       'Maximum Voltage for Fit', 'Amplitude_undershoot',
+       'Error_Amplitude_undershoot', 'Tau_undershoot', 'Error_Tau_undershoot',
+       'chi2_undershoot'],
+      dtype='object')
 	'''
 	fit_report = '/home/stephy/ICECUBE/undershoot/20200609/Results_droop_undershoot.h5'
 	if os.path.isfile(fit_report):
@@ -89,19 +91,39 @@ def droop_undershoot():
 	sbeta = []
 	chi2 = []
 	covar_matrix = []
+	board_id = []
+	df_channel = []
+	df_temperature = []
+	df_batch = []
 	for HVB in HV_Boards:
 		locate = df.loc[HVB]
+		board_id.append(HVB)
 		Td = locate['Tau_droop']
 		Tu = locate['Tau_undershoot']
+		Ch = locate['Channel']
+		Temp = locate['Real_temperature']
+		bh = locate['Batch']
+		u_ch = np.unique(Ch)
+		if len(u_ch) == 1 and len(np.unique(bh)) == 1:
+			bh = bh[0]
+			u_ch = u_ch[0]
+		else:
+			print(f'Channels found for {HVB}: {np.unique(Ch)}')
+			print(f'Batches found for  {HVB}: {np.unique(bh)}')
+			raise ValueError('HVB has multiple channels, please check dataframe!')
+		df_channel.append(u_ch)
+		inter_temp = np.unique(Temp)
+		df_temperature.append(inter_temp.tolist())
+		df_batch.append(np.unique(bh))
 		a, sa, b, sb, c, cov, best_fit = line_fit(Tu, Td)
 		alpha.append(a)
 		salpha.append(sa)
 		beta.append(b)
 		sbeta.append(sb)
 		chi2.append(c)
-		covar_matrix.append(cov)
+		covar_matrix.append(cov.tolist())
 		plot_results_droop_undershoot(HVB, Tu, Td, best_fit, a, b)
-	DroopVsUndershoot = [alpha, salpha, beta, sbeta, chi2, covar_matrix]
+	DroopVsUndershoot = [board_id, df_channel, df_temperature, df_batch, alpha, salpha, beta, sbeta, chi2, covar_matrix]
 	return DroopVsUndershoot
 
 
@@ -116,8 +138,8 @@ def plot_results_droop_undershoot(Directory_board, tau_under, tau_droop, best_fi
 	plt.plot(tau_under*1E6, best_fit*1E6, ms=20, alpha=0.5)
 	plt.legend(loc='best')
 	plt.grid(linestyle='dotted')
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/png/HVB{}_DroopUndershoot.png'.format(Directory_board))
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/svg/HVB{}_DroopUndershoot.svg'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/png/{}_DroopUndershoot.png'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/svg/{}_DroopUndershoot.svg'.format(Directory_board))
 	#plt.show()
 	plt.clf()
 	plt.cla()
@@ -148,7 +170,7 @@ def droop_temperature():
 		p2.append(pC)
 		sp2.append(spC)
 		chi2.append(c)
-		covar_matrix.append(cov)
+		covar_matrix.append(cov.tolist())
 		plot_results_droop_temperature(HVB, Temp, Td, best_fit, pA, pB, pC)
 	DroopVsTemp = [p0, sp0, p1, sp1, p2, sp2, chi2, covar_matrix]
 	return DroopVsTemp
@@ -163,8 +185,8 @@ def plot_results_droop_temperature(Directory_board, temp, tau_droop, best_fit, p
 	plt.plot(temp, best_fit*1E6, ms=25, alpha=0.5, label='Temp-droop fit')
 	plt.legend(loc='best')
 	plt.grid(linestyle='dotted')
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/png/HVB{}_DroopTemperature.png'.format(Directory_board))
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/svg/HVB{}_DroopTemperature.svg'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/png/{}_DroopTemperature.png'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/svg/{}_DroopTemperature.svg'.format(Directory_board))
 	#plt.show()
 	plt.clf()
 	plt.cla()
@@ -195,7 +217,7 @@ def undershoot_temperature():
 		p5.append(pC)
 		sp5.append(spC)
 		chi2.append(c)
-		covar_matrix.append(cov)
+		covar_matrix.append(cov.tolist())
 		plot_results_undershoot_temperature(HVB, Temp, Tu, best_fit, pA, pB, pC)
 	UndershootVsTemp = [p3, sp3, p4, sp4, p5, sp5, chi2, covar_matrix]
 	return UndershootVsTemp
@@ -210,55 +232,40 @@ def plot_results_undershoot_temperature(Directory_board, temp, tau_undershoot, b
 	plt.plot(temp, best_fit*1E6, ms=25, alpha=0.5, label='Temp-droop fit')
 	plt.legend(loc='best')
 	plt.grid(linestyle='dotted')
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/png/HVB{}_UndershootTemperature.png'.format(Directory_board))
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/svg/HVB{}_UndershootTemperature.svg'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/png/{}_UndershootTemperature.png'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/svg/{}_UndershootTemperature.svg'.format(Directory_board))
 	#plt.show()
 	plt.clf()
 	plt.cla()
 	plt.close()
 
 
-def build_data_frame(Droop, Undershoot):
-	num_files = len(Droop[0])
-	board_id = ['HVB_{}'.format(Directory_board)] * num_files
-	idxs = ['HVB_{}'.format(Directory_board)]
-	channel = int(Channel)*np.ones((1,num_files))
-	iterables = [idxs, np.arange(num_files)]
-	m_idx = pd.MultiIndex.from_product(iterables, names=['Board_ID', 'Waveform_number'])
-	fit_data = np.concatenate((np.asarray(Droop), np.asarray(Undershoot)))
-	dir_temp = int(Directory_temp)*np.ones((1, num_files))
-	real_temp = float(Temperature)*np.ones((1, num_files))
-	batch = int(Batch)*np.ones((1, num_files))
-	data = np.concatenate((channel, dir_temp, real_temp, batch, fit_data)).T
-	print(fit_data.ndim, fit_data.shape, dir_temp.shape, dir_temp.ndim, data.shape)
-	df = pd.DataFrame(data, columns = ['Channel', 'Directory_temperature', 'Real_temperature',
-		'Batch', 'Amplitude_droop', 'Error_Amplitude_droop', 'Tau_droop', 'Error_Tau_Droop',
-		'chi2_droop', 'Amplitude_undershoot', 'Error_Amplitude_undershoot', 'Tau_undershoot',
-		'Error_Tau_undershoot', 'chi2_undershoot'], index = m_idx)
-	return df
-
-
-def store_df(Droop, Undershoot):
-	df = build_data_frame(Droop, Undershoot)
-	filename = '/home/stephy/ICECUBE/undershoot/20200609/Results_droop_undershoot.h5'
-	if os.path.isfile(filename):
-		previous_df = pd.read_hdf(filename)
-		new_df = df.append(previous_df)
-		new_df.to_hdf(filename, key='new_df', mode='w')
-		return 'The data has been succesfully attached!'
-	else:
-		df.to_hdf(filename, key='df', mode='w')
-		return 'A new data frame has been created!'
-
-
-def main():
+def build_data_frame():
 	DroopVsUndershoot = droop_undershoot()
 	DroopVsTemp = droop_temperature()
 	UndershootVsTemp = undershoot_temperature()
-	#store_into_dataframe = store_df(DroopVsUndershoot, DroopVsTemp, UndershootVsTemp)
-	#print(store_into_dataframe)
+	data = np.concatenate((DroopVsUndershoot, DroopVsTemp, UndershootVsTemp)).T
+	df = pd.DataFrame(data, columns = ['Board_ID', 'Channel', 'Real_temperature',
+		'Batch', 'Alpha', 'Error_Alpha', 'Beta', 'Error_Beta', 'chi2_AlphaBeta',
+		'covar_matrix_AlphaBeta', 'p0', 'Error_p0', 'p1', 'Error_p1', 'p2', 'Error_p2',
+		'chi2_p0p1p2', 'covar_matrix_p0p1p2', 'p3', 'Error_p3', 'p4', 'Error_p4', 'p5',
+		'Error_p5', 'chi2_p3p4p5', 'covar_matrix_p3p4p5'])
+	return df
+
+
+def store_df():
+	df = build_data_frame()
+	filename = '/home/stephy/ICECUBE/undershoot/20200609/Results_DroopUndershootTemperature.h5'
+	df.to_hdf(filename, key='df', mode='w')
+	print(df)
+	return print('A new data frame has been created!')
+
+
+def main():
+	store_into_dataframe = store_df()
 
 if __name__ == "__main__":
 	np.set_printoptions(precision=10)
 	plt.rcParams.update({'font.size': 13})
+	input('WARNING: this script will erase any previous dataframe created under the name --Results_DroopUndershootTemperature.h5--, if sure, press any key to continue.')
 	main()
