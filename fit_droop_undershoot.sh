@@ -46,23 +46,23 @@ python fit_droop_undershoot.py 5 -20 -21.8 3 2
 python fit_droop_undershoot.py 5 -10 -12.85 3 2
 python fit_droop_undershoot.py 5 0 -2.1 3 2
 
-python fit_droop_undershoot.py 6 -55 -55.6 3 1
-python fit_droop_undershoot.py 6 -50 -50.55 3 1
-python fit_droop_undershoot.py 6 -45 -40.9 3 1
-python fit_droop_undershoot.py 6 -40 -35.8 3 1
-python fit_droop_undershoot.py 6 -35 -30.75 3 1
-python fit_droop_undershoot.py 6 -20 -21.3 3 1
-python fit_droop_undershoot.py 6 -10 -11.1 3 1
-python fit_droop_undershoot.py 6 0 0.1 3 1
+python fit_droop_undershoot.py 6 -55 -54.2 3 5
+python fit_droop_undershoot.py 6 -50 -50.4 3 5
+python fit_droop_undershoot.py 6 -45 -43.9 3 5
+python fit_droop_undershoot.py 6 -40 -40.7 3 5
+python fit_droop_undershoot.py 6 -35 -34.0 3 5
+python fit_droop_undershoot.py 6 -20 -19.1 3 5
+python fit_droop_undershoot.py 6 -10 -8.60 3 5
+python fit_droop_undershoot.py 6 0 -0.5 3 5
 
-python fit_droop_undershoot.py 7 -55 -55.6 3 2
-python fit_droop_undershoot.py 7 -50 -50.55 3 2
-python fit_droop_undershoot.py 7 -45 -40.9 3 2
-python fit_droop_undershoot.py 7 -40 -35.8 3 2
-python fit_droop_undershoot.py 7 -35 -30.75 3 2
-python fit_droop_undershoot.py 7 -20 -21.3 3 2
-python fit_droop_undershoot.py 7 -10 -11.1 3 2
-python fit_droop_undershoot.py 7 0 0.1 3 2
+python fit_droop_undershoot.py 7 -55 -54.2 3 6
+python fit_droop_undershoot.py 7 -50 -50.4 3 6
+python fit_droop_undershoot.py 7 -45 -44.0 3 6
+python fit_droop_undershoot.py 7 -40 -40.6 3 6
+python fit_droop_undershoot.py 7 -35 -34.0 3 6
+python fit_droop_undershoot.py 7 -20 -19.1 3 6
+python fit_droop_undershoot.py 7 -10 -8.70 3 6
+python fit_droop_undershoot.py 7 0 -0.4 3 6
 
 python fit_droop_undershoot.py 9 -55 -54.55 3 1
 python fit_droop_undershoot.py 9 -50 -50.6 3 1
@@ -82,23 +82,23 @@ python fit_droop_undershoot.py 10 -20 -20.2 3 2
 python fit_droop_undershoot.py 10 -10 -11.55 3 2
 python fit_droop_undershoot.py 10 0 -2.55 3 2
 
-python fit_droop_undershoot.py 11 -55 -53.75 3 1
-python fit_droop_undershoot.py 11 -50 -49.6 3 1
-python fit_droop_undershoot.py 11 -45 -44.5 3 1
-python fit_droop_undershoot.py 11 -40 -38.95 3 1
-python fit_droop_undershoot.py 11 -35 -34.95 3 1
-python fit_droop_undershoot.py 11 -20 -19.7 3 1
-python fit_droop_undershoot.py 11 -10 -9.0 3 1
-python fit_droop_undershoot.py 11 0 0.05 3 1
+python fit_droop_undershoot.py 11 -55 -55.2 3 5
+python fit_droop_undershoot.py 11 -50 -49.2 3 5
+python fit_droop_undershoot.py 11 -45 -46.2 3 5
+python fit_droop_undershoot.py 11 -40 -39.5 3 5
+python fit_droop_undershoot.py 11 -35 -36.1 3 5
+python fit_droop_undershoot.py 11 -20 -16.8 3 5
+python fit_droop_undershoot.py 11 -10 -9.5 3 5
+python fit_droop_undershoot.py 11 0 0.4 3 5
 
-python fit_droop_undershoot.py 12 -55 -53.75 3 2
-python fit_droop_undershoot.py 12 -50 -49.6 3 2
-python fit_droop_undershoot.py 12 -45 -44.5 3 2
-python fit_droop_undershoot.py 12 -40 -38.95 3 2
-python fit_droop_undershoot.py 12 -35 -34.95 3 2
-python fit_droop_undershoot.py 12 -20 -19.7 3 2
-python fit_droop_undershoot.py 12 -10 -9.0 3 2
-python fit_droop_undershoot.py 12 0 0.05 3 2
+python fit_droop_undershoot.py 12 -55 -55.2 3 6
+python fit_droop_undershoot.py 12 -50 -49.2 3 6
+python fit_droop_undershoot.py 12 -45 -46.0 3 6
+python fit_droop_undershoot.py 12 -40 -39.6 3 6
+python fit_droop_undershoot.py 12 -35 -36.1 3 6
+python fit_droop_undershoot.py 12 -20 -16.9 3 6
+python fit_droop_undershoot.py 12 -10 -9.5 3 6
+python fit_droop_undershoot.py 12 0 0.3 3 6
 
 python fit_droop_undershoot.py 13 -55 -54.5 3 4
 python fit_droop_undershoot.py 13 -50 -49.6 3 4
@@ -136,23 +136,23 @@ python fit_droop_undershoot.py 16 -20 -20.5 3 4
 python fit_droop_undershoot.py 16 -10 -9.0 3 4
 python fit_droop_undershoot.py 16 0 -3.2 3 4
 
-python fit_droop_undershoot.py 17 -55 -56.2 3 5
-python fit_droop_undershoot.py 17 -50 -48.9 3 5
-python fit_droop_undershoot.py 17 -45 -45.8 3 5
-python fit_droop_undershoot.py 17 -40 -41 3 5
-python fit_droop_undershoot.py 17 -35 -34.5 3 5
-python fit_droop_undershoot.py 17 -20 -20 3 5
-python fit_droop_undershoot.py 17 -10 -10.4 3 5
-python fit_droop_undershoot.py 17 0 -1.1 3 5
+python fit_droop_undershoot.py 17 -55 -55.6 3 9
+python fit_droop_undershoot.py 17 -50 -50.4 3 9
+python fit_droop_undershoot.py 17 -45 -44.0 3 9
+python fit_droop_undershoot.py 17 -40 -39.4 3 9
+python fit_droop_undershoot.py 17 -35 -34.8 3 9
+python fit_droop_undershoot.py 17 -20 -19.1 3 9
+python fit_droop_undershoot.py 17 -10 -10.0 3 9
+python fit_droop_undershoot.py 17 0 0.0 3 9
 
-python fit_droop_undershoot.py 18 -55 -56.2 3 6
-python fit_droop_undershoot.py 18 -50 -49.1 3 6
-python fit_droop_undershoot.py 18 -45 -45.5 3 6
-python fit_droop_undershoot.py 18 -40 -41 3 6
-python fit_droop_undershoot.py 18 -35 -34.6 3 6
-python fit_droop_undershoot.py 18 -20 -20.1 3 6
-python fit_droop_undershoot.py 18 -10 -10.3 3 6
-python fit_droop_undershoot.py 18 0 -1.1 3 6
+python fit_droop_undershoot.py 18 -55 -55.6 3 10
+python fit_droop_undershoot.py 18 -50 -50.2 3 10
+python fit_droop_undershoot.py 18 -45 -44.0 3 10
+python fit_droop_undershoot.py 18 -40 -39.6 10
+python fit_droop_undershoot.py 18 -35 -34.7 3 10
+python fit_droop_undershoot.py 18 -20 -19.2 3 10
+python fit_droop_undershoot.py 18 -10 -9.90 3 10
+python fit_droop_undershoot.py 18 0 -0.1 3 10
 
 python fit_droop_undershoot.py 19 -55 -58.2 3 3
 python fit_droop_undershoot.py 19 -50 -50.3 3 3
@@ -172,14 +172,14 @@ python fit_droop_undershoot.py 20 -20 -19 3 9
 python fit_droop_undershoot.py 20 -10 -11.3 3 9
 python fit_droop_undershoot.py 20 0 -2.45 3 9
 
-python fit_droop_undershoot.py 21 -55 -57.1 3 3
-python fit_droop_undershoot.py 21 -50 -49.6 3 3
-python fit_droop_undershoot.py 21 -45 -45.15 3 3
-python fit_droop_undershoot.py 21 -40 -38.15 3 3
-python fit_droop_undershoot.py 21 -35 -33.25 3 3
-python fit_droop_undershoot.py 21 -20 -16.65 3 3
-python fit_droop_undershoot.py 21 -10 -8.95 3 3
-python fit_droop_undershoot.py 21 0 -1.75 3 3
+python fit_droop_undershoot.py 21 -55 -55.6 3 11
+python fit_droop_undershoot.py 21 -50 -50.1 3 11
+python fit_droop_undershoot.py 21 -45 -44.1 3 11
+python fit_droop_undershoot.py 21 -40 -39.7 3 11
+python fit_droop_undershoot.py 21 -35 -34.7 3 11
+python fit_droop_undershoot.py 21 -20 -19.2 3 11
+python fit_droop_undershoot.py 21 -10 -9.80 3 11
+python fit_droop_undershoot.py 21 0 -0.1 3 11
 
 python fit_droop_undershoot.py 22 -55 -57.1 3 4
 python fit_droop_undershoot.py 22 -50 -49.6 3 4
@@ -262,14 +262,14 @@ python fit_droop_undershoot.py 30 -20 -20.7 3 13
 python fit_droop_undershoot.py 30 -10 -9.6 3 13
 python fit_droop_undershoot.py 30 0 -1.75 3 13
 
-python fit_droop_undershoot.py 31 -55 -54.1 3 14
-python fit_droop_undershoot.py 31 -50 -49.9 3 14
-python fit_droop_undershoot.py 31 -45 -44.9 3 14
-python fit_droop_undershoot.py 31 -40 -40.3 3 14
-python fit_droop_undershoot.py 31 -35 -34.35 3 14
-python fit_droop_undershoot.py 31 -20 -20.7 3 14
-python fit_droop_undershoot.py 31 -10 -9.6 3 14
-python fit_droop_undershoot.py 31 0 -1.75 3 14
+python fit_droop_undershoot.py 31 -55 -55.6 3 12
+python fit_droop_undershoot.py 31 -50 -50.0 3 12
+python fit_droop_undershoot.py 31 -45 -44.3 3 12
+python fit_droop_undershoot.py 31 -40 -39.8 3 12
+python fit_droop_undershoot.py 31 -35 -34.6 3 12
+python fit_droop_undershoot.py 31 -20 -19.3 3 12
+python fit_droop_undershoot.py 31 -10 -9.8 3 12
+python fit_droop_undershoot.py 31 0 -0.2 3 12
 
 python fit_droop_undershoot.py 32 -55 -55.1 3 5
 python fit_droop_undershoot.py 32 -50 -50.2 3 5
@@ -289,23 +289,23 @@ python fit_droop_undershoot.py 33 -20 -20.6 3 6
 python fit_droop_undershoot.py 33 -10 -8.4 3 6
 python fit_droop_undershoot.py 33 0 -1.1 3 6
 
-python fit_droop_undershoot.py 34 -55 -56.1 3 7
-python fit_droop_undershoot.py 34 -50 -49.2 3 7
-python fit_droop_undershoot.py 34 -45 -45.5 3 7
-python fit_droop_undershoot.py 34 -40 -41 3 7
-python fit_droop_undershoot.py 34 -35 -34.7 3 7
-python fit_droop_undershoot.py 34 -20 -20.2 3 7
-python fit_droop_undershoot.py 34 -10 -10.3 3 7
-python fit_droop_undershoot.py 34 0 -1.1 3 7
+python fit_droop_undershoot.py 34 -55 -55.6 3 13
+python fit_droop_undershoot.py 34 -50 -49.6 3 13
+python fit_droop_undershoot.py 34 -45 -42.8 3 13
+python fit_droop_undershoot.py 34 -40 -40.2 3 13
+python fit_droop_undershoot.py 34 -35 -34.0 3 13
+python fit_droop_undershoot.py 34 -20 -19.8 3 13
+python fit_droop_undershoot.py 34 -10 -9.50 3 13
+python fit_droop_undershoot.py 34 0 -0.5 3 13
 
-python fit_droop_undershoot.py 35 -55 -56 3 8
-python fit_droop_undershoot.py 35 -50 -49.4 3 8
-python fit_droop_undershoot.py 35 -45 -45.2 3 8
-python fit_droop_undershoot.py 35 -40 -41.1 3 8
-python fit_droop_undershoot.py 35 -35 -34.7 3 8
-python fit_droop_undershoot.py 35 -20 -20.2 3 8
-python fit_droop_undershoot.py 35 -10 -10.2 3 8
-python fit_droop_undershoot.py 35 0 -1.2 3 8
+python fit_droop_undershoot.py 35 -55 -55.6 3 14
+python fit_droop_undershoot.py 35 -50 -49.4 3 14
+python fit_droop_undershoot.py 35 -45 -42.6 3 14
+python fit_droop_undershoot.py 35 -40 -40.3 3 14
+python fit_droop_undershoot.py 35 -35 -34.0 3 14
+python fit_droop_undershoot.py 35 -20 -19.9 3 14
+python fit_droop_undershoot.py 35 -10 -9.40 3 14
+python fit_droop_undershoot.py 35 0 -0.6 3 14
 
 python fit_droop_undershoot.py 36 -55 -55.2 3 13
 python fit_droop_undershoot.py 36 -50 -48.6 3 13
@@ -316,14 +316,14 @@ python fit_droop_undershoot.py 36 -20 -18.8 3 13
 python fit_droop_undershoot.py 36 -10 -11 3 13
 python fit_droop_undershoot.py 36 0 -0.1 3 13
 
-python fit_droop_undershoot.py 37 -55 -55.4 3 10
-python fit_droop_undershoot.py 37 -50 -50.2 3 10
-python fit_droop_undershoot.py 37 -45 -45.1 3 10
-python fit_droop_undershoot.py 37 -40 -40 3 10
-python fit_droop_undershoot.py 37 -35 -34.8 3 10
-python fit_droop_undershoot.py 37 -20 -19.2 3 10
-python fit_droop_undershoot.py 37 -10 -10.2 3 10
-python fit_droop_undershoot.py 37 0 -1.2 3 10
+python fit_droop_undershoot.py 37 -55 -55.6 3 15
+python fit_droop_undershoot.py 37 -50 -49.2 3 15
+python fit_droop_undershoot.py 37 -45 -42.6 3 15
+python fit_droop_undershoot.py 37 -40 -40.4 3 15
+python fit_droop_undershoot.py 37 -35 -34.0 3 15
+python fit_droop_undershoot.py 37 -20 -20.0 3 15
+python fit_droop_undershoot.py 37 -10 -9.30 3 15
+python fit_droop_undershoot.py 37 0 -0.6 3 15
 
 python fit_droop_undershoot.py 38 -55 -53 3 5
 python fit_droop_undershoot.py 38 -50 -50.4 3 5
@@ -352,14 +352,14 @@ python fit_droop_undershoot.py 40 -20 -21.4 3 7
 python fit_droop_undershoot.py 40 -10 -10.5 3 7
 python fit_droop_undershoot.py 40 0 -0.3 3 7
 
-python fit_droop_undershoot.py 42 -55 -55.8 3 9
-python fit_droop_undershoot.py 42 -50 -49.8 3 9
-python fit_droop_undershoot.py 42 -45 -44.8 3 9
-python fit_droop_undershoot.py 42 -40 -41.1 3 9
-python fit_droop_undershoot.py 42 -35 -35.1 3 9
-python fit_droop_undershoot.py 42 -20 -20.4 3 9
-python fit_droop_undershoot.py 42 -10 -9.8 3 9
-python fit_droop_undershoot.py 42 0 -1.4 3 9
+python fit_droop_undershoot.py 42 -55 -55.6 3 16
+python fit_droop_undershoot.py 42 -50 -47.4 3 16
+python fit_droop_undershoot.py 42 -45 -42.5 3 16
+python fit_droop_undershoot.py 42 -40 -40.5 3 16
+python fit_droop_undershoot.py 42 -35 -34.0 3 16
+python fit_droop_undershoot.py 42 -20 -20.1 3 16
+python fit_droop_undershoot.py 42 -10 -9.3 3 16
+python fit_droop_undershoot.py 42 0 -0.6 3 16
 
 python fit_droop_undershoot.py 44 -55 -54 3 15
 python fit_droop_undershoot.py 44 -50 -49.2 3 15
@@ -370,14 +370,14 @@ python fit_droop_undershoot.py 44 -20 -20.1 3 15
 python fit_droop_undershoot.py 44 -10 -9.6 3 15
 python fit_droop_undershoot.py 44 0 -0.8 3 15
 
-python fit_droop_undershoot.py 46 -55 -55.6 4 3
-python fit_droop_undershoot.py 46 -50 -50.55 4 3
-python fit_droop_undershoot.py 46 -45 -40.9 4 3
-python fit_droop_undershoot.py 46 -40 -35.8 4 3
-python fit_droop_undershoot.py 46 -35 -30.75 4 3
-python fit_droop_undershoot.py 46 -20 -21.3 4 3
-python fit_droop_undershoot.py 46 -10 -11.1 4 3
-python fit_droop_undershoot.py 46 0 0.1 4 3
+python fit_droop_undershoot.py 46 -55 -54.2 4 7
+python fit_droop_undershoot.py 46 -50 -50.3 4 7
+python fit_droop_undershoot.py 46 -45 -44.0 4 7
+python fit_droop_undershoot.py 46 -40 -40.5 4 7
+python fit_droop_undershoot.py 46 -35 -34.2 4 7
+python fit_droop_undershoot.py 46 -20 -19.0 4 7
+python fit_droop_undershoot.py 46 -10 -8.70 4 7
+python fit_droop_undershoot.py 46 0 2.3 4 7
 
 python fit_droop_undershoot.py 47 -55 -55.6 4 4
 python fit_droop_undershoot.py 47 -50 -50.55 4 4
@@ -388,23 +388,23 @@ python fit_droop_undershoot.py 47 -20 -21.3 4 4
 python fit_droop_undershoot.py 47 -10 -11.1 4 4
 python fit_droop_undershoot.py 47 0 0.1 4 4
 
-python fit_droop_undershoot.py 48 -55 -54.55 4 3
-python fit_droop_undershoot.py 48 -50 -50.6 4 3
-python fit_droop_undershoot.py 48 -45 -45.1 4 3
-python fit_droop_undershoot.py 48 -40 -39.45 4 3
-python fit_droop_undershoot.py 48 -35 -34.85 4 3
-python fit_droop_undershoot.py 48 -20 -20.2 4 3
-python fit_droop_undershoot.py 48 -10 -11.55 4 3
-python fit_droop_undershoot.py 48 0 -2.55 4 3
+python fit_droop_undershoot.py 48 -55 -54.3 4 8
+python fit_droop_undershoot.py 48 -50 -50.2 4 8
+python fit_droop_undershoot.py 48 -45 -44.2 4 8
+python fit_droop_undershoot.py 48 -40 -40.4 4 8
+python fit_droop_undershoot.py 48 -35 -34.2 4 8
+python fit_droop_undershoot.py 48 -20 -18.9 4 8
+python fit_droop_undershoot.py 48 -10 -8.80 4 8
+python fit_droop_undershoot.py 48 0 -0.1 4 8
 
-python fit_droop_undershoot.py 49 -55 -54.55 4 4
-python fit_droop_undershoot.py 49 -50 -50.6 4 4
-python fit_droop_undershoot.py 49 -45 -45.1 4 4
-python fit_droop_undershoot.py 49 -40 -39.45 4 4
-python fit_droop_undershoot.py 49 -35 -34.85 4 4
-python fit_droop_undershoot.py 49 -20 -20.2 4 4
-python fit_droop_undershoot.py 49 -10 -11.55 4 4
-python fit_droop_undershoot.py 49 0 -2.55 4 4
+python fit_droop_undershoot.py 49 -55 -54.4 4 9
+python fit_droop_undershoot.py 49 -50 -49.7 4 9
+python fit_droop_undershoot.py 49 -45 -44.8 4 9
+python fit_droop_undershoot.py 49 -40 -40.0 4 9
+python fit_droop_undershoot.py 49 -35 -34.6 4 9
+python fit_droop_undershoot.py 49 -20 -18.4 4 9
+python fit_droop_undershoot.py 49 -10 -9.10 4 9
+python fit_droop_undershoot.py 49 0 0.2 4 9
 
 python fit_droop_undershoot.py 50 -55 -53.75 4 3
 python fit_droop_undershoot.py 50 -50 -49.6 4 3
@@ -496,14 +496,14 @@ python fit_droop_undershoot.py 59 -20 -19.75 4 12
 python fit_droop_undershoot.py 59 -10 -10.05 4 12
 python fit_droop_undershoot.py 59 0 -1.25 4 12
 
-python fit_droop_undershoot.py 60 -55 -54.1 4 14
-python fit_droop_undershoot.py 60 -50 -49.9 4 14
-python fit_droop_undershoot.py 60 -45 -44.9 4 14
-python fit_droop_undershoot.py 60 -40 -40.3 4 14
-python fit_droop_undershoot.py 60 -35 -34.35 4 14
-python fit_droop_undershoot.py 60 -20 -20.7 4 14
-python fit_droop_undershoot.py 60 -10 -9.6 4 14
-python fit_droop_undershoot.py 60 0 -1.75 4 14
+python fit_droop_undershoot.py 60 -55 -54.4 4 10
+python fit_droop_undershoot.py 60 -50 -49.6 4 10
+python fit_droop_undershoot.py 60 -45 -44.9 4 10
+python fit_droop_undershoot.py 60 -40 -39.8 4 10
+python fit_droop_undershoot.py 60 -35 -34.7 4 10
+python fit_droop_undershoot.py 60 -20 -18.3 4 10
+python fit_droop_undershoot.py 60 -10 -9.2 4 10
+python fit_droop_undershoot.py 60 0 0.20 4 10
 
 python fit_droop_undershoot.py 61 -55 -54.8 4 7
 python fit_droop_undershoot.py 61 -50 -49.7 4 7
@@ -577,14 +577,14 @@ python fit_droop_undershoot.py 68 -20 -18.3 4 11
 python fit_droop_undershoot.py 68 -10 -9.6 4 11
 python fit_droop_undershoot.py 68 0 -0.9 4 11
 
-python fit_droop_undershoot.py 69 -55 -55.7 4 10
-python fit_droop_undershoot.py 69 -50 -49.9 4 10
-python fit_droop_undershoot.py 69 -45 -45.5 4 10
-python fit_droop_undershoot.py 69 -40 -41.1 4 10
-python fit_droop_undershoot.py 69 -35 -35.2 4 10
-python fit_droop_undershoot.py 69 -20 -20.5 4 10
-python fit_droop_undershoot.py 69 -10 -9.7 4 10
-python fit_droop_undershoot.py 69 0 -1.4 4 10
+python fit_droop_undershoot.py 69 -55 -54.4 4 11
+python fit_droop_undershoot.py 69 -50 -49.5 4 11
+python fit_droop_undershoot.py 69 -45 -44.9 4 11
+python fit_droop_undershoot.py 69 -40 -39.7 4 11
+python fit_droop_undershoot.py 69 -35 -34.8 4 11
+python fit_droop_undershoot.py 69 -20 -18.1 4 11
+python fit_droop_undershoot.py 69 -10 -9.2 4 11
+python fit_droop_undershoot.py 69 0 0.30 4 11
 
 python fit_droop_undershoot.py 70 -55 -55 4 13
 python fit_droop_undershoot.py 70 -50 -48 4 13
@@ -631,14 +631,14 @@ python  fit_droop_undershoot.py  74 -20 -17.2 4 7
 python  fit_droop_undershoot.py  74 -10 -11.6 4 7
 python  fit_droop_undershoot.py  74 0 -1.4 4 7
 
-python fit_droop_undershoot.py 75 -55 -55.7 4 11
-python fit_droop_undershoot.py 75 -50 -49.9 4 11
-python fit_droop_undershoot.py 75 -45 -45.4 4 11
-python fit_droop_undershoot.py 75 -40 -41.1 4 11
-python fit_droop_undershoot.py 75 -35 -35.2 4 11
-python fit_droop_undershoot.py 75 -20 -20.6 4 11
-python fit_droop_undershoot.py 75 -10 -9.7 4 11
-python fit_droop_undershoot.py 75 0 -1.4 4 11
+python fit_droop_undershoot.py 75 -55 -54.4 4 12
+python fit_droop_undershoot.py 75 -50 -49.5 4 12
+python fit_droop_undershoot.py 75 -45 -45.0 4 12
+python fit_droop_undershoot.py 75 -40 -39.7 4 12
+python fit_droop_undershoot.py 75 -35 -34.9 4 12
+python fit_droop_undershoot.py 75 -20 -18.1 4 12
+python fit_droop_undershoot.py 75 -10 -9.3 4 12
+python fit_droop_undershoot.py 75 0 0.40 4 12
 
 python  fit_droop_undershoot.py  76 -55 -55.2 4 9
 python  fit_droop_undershoot.py  76 -50 -51.9 4 9
@@ -667,14 +667,14 @@ python  fit_droop_undershoot.py  78 -20 -18.2 4 11
 python  fit_droop_undershoot.py  78 -10 -10.9 4 11
 python  fit_droop_undershoot.py  78 0 -1.8 4 11
 
-python fit_droop_undershoot.py 79 -55 -55.6 4 12
-python fit_droop_undershoot.py 79 -50 -50 4 12
-python fit_droop_undershoot.py 79 -45 -45.5 4 12
-python fit_droop_undershoot.py 79 -40 -41 4 12
-python fit_droop_undershoot.py 79 -35 -35.3 4 12
-python fit_droop_undershoot.py 79 -20 -20.7 4 12
-python fit_droop_undershoot.py 79 -10 -9.7 4 12
-python fit_droop_undershoot.py 79 0 -1.4 4 12
+python fit_droop_undershoot.py 79 -55 -55.4 4 5
+python fit_droop_undershoot.py 79 -50 -51.6 4 5
+python fit_droop_undershoot.py 79 -45 -43.9 4 5
+python fit_droop_undershoot.py 79 -40 -39.9 4 5
+python fit_droop_undershoot.py 79 -35 -33.0 4 5
+python fit_droop_undershoot.py 79 -20 -20.8 4 5
+python fit_droop_undershoot.py 79 -10 -9.9 4 5
+python fit_droop_undershoot.py 79 0 -0.6 4 5
 
 python  fit_droop_undershoot.py  80 -55 -54.7 4 13
 python  fit_droop_undershoot.py  80 -50 -52.1 4 13
@@ -730,14 +730,14 @@ python fit_droop_undershoot.py 85 -20 -20.8 4 7
 python fit_droop_undershoot.py 85 -10 -9.8 4 7
 python fit_droop_undershoot.py 85 0 -1 4 7
 
-python fit_droop_undershoot.py 86 -55 -55.3 4 13
-python fit_droop_undershoot.py 86 -50 -50.7 4 13
-python fit_droop_undershoot.py 86 -45 -44.6 4 13
-python fit_droop_undershoot.py 86 -40 -40.7 4 13
-python fit_droop_undershoot.py 86 -35 -35.7 4 13
-python fit_droop_undershoot.py 86 -20 -20.9 4 13
-python fit_droop_undershoot.py 86 -10 -9.5 4 13
-python fit_droop_undershoot.py 86 0 -1.6 4 13
+python fit_droop_undershoot.py 86 -55 -55.4 4 6
+python fit_droop_undershoot.py 86 -50 -51.6 4 6
+python fit_droop_undershoot.py 86 -45 -44.0 4 6
+python fit_droop_undershoot.py 86 -40 -39.8 4 6
+python fit_droop_undershoot.py 86 -35 -33.2 4 6
+python fit_droop_undershoot.py 86 -20 -20.8 4 6
+python fit_droop_undershoot.py 86 -10 -10. 4 6
+python fit_droop_undershoot.py 86 0 -0.6 4 6
 
 python fit_droop_undershoot.py 87 -55 -53.8 4 10
 python fit_droop_undershoot.py 87 -50 -49.1 4 10
@@ -757,14 +757,14 @@ python fit_droop_undershoot.py 88 -20 -19.9 4 11
 python fit_droop_undershoot.py 88 -10 -10.2 4 11
 python fit_droop_undershoot.py 88 0 -0.7 4 11
 
-python fit_droop_undershoot.py 89 -55 -54.6 4 14
-python fit_droop_undershoot.py 89 -50 -50.8 4 14
-python fit_droop_undershoot.py 89 -45 -44.5 4 14
-python fit_droop_undershoot.py 89 -40 -40.6 4 14
-python fit_droop_undershoot.py 89 -35 -35.8 4 14
-python fit_droop_undershoot.py 89 -20 -21 4 14
-python fit_droop_undershoot.py 89 -10 -9.4 4 14
-python fit_droop_undershoot.py 89 0 -1.6 4 14
+python fit_droop_undershoot.py 89 -55 -55.5 4 7
+python fit_droop_undershoot.py 89 -50 -51.5 4 7
+python fit_droop_undershoot.py 89 -45 -44.0 4 7
+python fit_droop_undershoot.py 89 -40 -39.6 4 7
+python fit_droop_undershoot.py 89 -35 -33.3 4 7
+python fit_droop_undershoot.py 89 -20 -20.8 4 7
+python fit_droop_undershoot.py 89 -10 -10. 4 7
+python fit_droop_undershoot.py 89 0 -0.6 4 7
 
 python fit_droop_undershoot.py 90 -55 -54.5 4 13
 python fit_droop_undershoot.py 90 -50 -48.8 4 13
@@ -775,14 +775,14 @@ python fit_droop_undershoot.py 90 -20 -19.2 4 13
 python fit_droop_undershoot.py 90 -10 -10.7 4 13
 python fit_droop_undershoot.py 90 0 -0.4 4 13
 
-python fit_droop_undershoot.py 91 -55 -54.5 4 15
-python fit_droop_undershoot.py 91 -50 -51 4 15
-python fit_droop_undershoot.py 91 -45 -44.5 4 15
-python fit_droop_undershoot.py 91 -40 -40.5 4 15
-python fit_droop_undershoot.py 91 -35 -35.9 4 15
-python fit_droop_undershoot.py 91 -20 -21.3 4 15
-python fit_droop_undershoot.py 91 -10 -9.3 4 15
-python fit_droop_undershoot.py 91 0 -1.7 4 15
+python fit_droop_undershoot.py 91 -55 -54.2 4 15
+python fit_droop_undershoot.py 91 -50 -48.7 4 15
+python fit_droop_undershoot.py 91 -45 -45.7 4 15
+python fit_droop_undershoot.py 91 -40 -39.2 4 15
+python fit_droop_undershoot.py 91 -35 -35.3 4 15
+python fit_droop_undershoot.py 91 -20 -17.4 4 15
+python fit_droop_undershoot.py 91 -10 -9.8 4 15
+python fit_droop_undershoot.py 91 0 0.90 4 15
 
 python fit_droop_undershoot.py 92 -55 -54.3 4 15
 python fit_droop_undershoot.py 92 -50 -47.8 4 15
@@ -1198,41 +1198,41 @@ python fit_droop_undershoot.py 137 -20 -21.3 4 12
 python fit_droop_undershoot.py 137 -10 -10.6 4 12
 python fit_droop_undershoot.py 137 0 -1.3 4 12
 
-python fit_droop_undershoot.py 138 -55 -55.2 4 11
-python fit_droop_undershoot.py 138 -50 -50.3 4 11
-python fit_droop_undershoot.py 138 -45 -44.9 4 11
-python fit_droop_undershoot.py 138 -40 -40 4 11
-python fit_droop_undershoot.py 138 -35 -34.8 4 11
-python fit_droop_undershoot.py 138 -20 -19.4 4 11
-python fit_droop_undershoot.py 138 -10 -10.2 4 11
-python fit_droop_undershoot.py 138 0 -1.2 4 11
+python fit_droop_undershoot.py 138 -55 -55.2 4 7
+python fit_droop_undershoot.py 138 -50 -49.4 4 7
+python fit_droop_undershoot.py 138 -45 -45.9 4 7
+python fit_droop_undershoot.py 138 -40 -39.7 7
+python fit_droop_undershoot.py 138 -35 -36.0 4 7
+python fit_droop_undershoot.py 138 -20 -16.9 4 7
+python fit_droop_undershoot.py 138 -10 -9.4 4 7
+python fit_droop_undershoot.py 138 0 0.2 4 7
 
-python fit_droop_undershoot.py 139 -55 -55.1 4 12
-python fit_droop_undershoot.py 139 -50 -50.4 4 12
-python fit_droop_undershoot.py 139 -45 -44.9 4 12
-python fit_droop_undershoot.py 139 -40 -40.1 4 12
-python fit_droop_undershoot.py 139 -35 -34.8 4 12
-python fit_droop_undershoot.py 139 -20 -19.4 4 12
-python fit_droop_undershoot.py 139 -10 -10.1 4 12
-python fit_droop_undershoot.py 139 0 -1.3 4 12
+python fit_droop_undershoot.py 139 -55 -55.2 4 8
+python fit_droop_undershoot.py 139 -50 -49.4 4 8
+python fit_droop_undershoot.py 139 -45 -45.9 4 8
+python fit_droop_undershoot.py 139 -40 -39.9 4 8
+python fit_droop_undershoot.py 139 -35 -35.9 4 8
+python fit_droop_undershoot.py 139 -20 -17.0 4 8
+python fit_droop_undershoot.py 139 -10 -9.4 4 8
+python fit_droop_undershoot.py 139 0 0.1 4 8
 
-python fit_droop_undershoot.py 140 -55 -54.7 4 13
-python fit_droop_undershoot.py 140 -50 -51.1 4 13
-python fit_droop_undershoot.py 140 -45 -44.3 4 13
-python fit_droop_undershoot.py 140 -40 -40.5 4 13
-python fit_droop_undershoot.py 140 -35 -34.3 4 13
-python fit_droop_undershoot.py 140 -20 -19.9 4 13
-python fit_droop_undershoot.py 140 -10 -9.8 4 13
-python fit_droop_undershoot.py 140 0 -1.4 4 13
+python fit_droop_undershoot.py 140 -55 -55.0 4 9
+python fit_droop_undershoot.py 140 -50 -50.1 4 9
+python fit_droop_undershoot.py 140 -45 -45.3 4 9
+python fit_droop_undershoot.py 140 -40 -40.4 4 9
+python fit_droop_undershoot.py 140 -35 -35.5 4 9
+python fit_droop_undershoot.py 140 -20 -17.5 4 9
+python fit_droop_undershoot.py 140 -10 -9.1 4 9
+python fit_droop_undershoot.py 140 0 -0.2 4 9
 
-python fit_droop_undershoot.py 141 -55 -54.6 4 14
-python fit_droop_undershoot.py 141 -50 -51.2 4 14
-python fit_droop_undershoot.py 141 -45 -44.3 4 14
-python fit_droop_undershoot.py 141 -40 -40.5 4 14
-python fit_droop_undershoot.py 141 -35 -34.2 4 14
-python fit_droop_undershoot.py 141 -20 -19.9 4 14
-python fit_droop_undershoot.py 141 -10 -9.8 4 14
-python fit_droop_undershoot.py 141 0 -1.5 4 14
+python fit_droop_undershoot.py 141 -55 -55.0 4 10
+python fit_droop_undershoot.py 141 -50 -50.2 4 10
+python fit_droop_undershoot.py 141 -45 -45.1 4 10
+python fit_droop_undershoot.py 141 -40 -40.5 4 10
+python fit_droop_undershoot.py 141 -35 -35.4 4 10
+python fit_droop_undershoot.py 141 -20 -17.6 4 10
+python fit_droop_undershoot.py 141 -10 -9.1 4 10
+python fit_droop_undershoot.py 141 0 -0.4 4 10
 
 python fit_droop_undershoot.py 142 -55 -55 4 5
 python fit_droop_undershoot.py 142 -50 -48.2 4 5
@@ -1279,14 +1279,14 @@ python fit_droop_undershoot.py 146 -20 -21.4 4 9
 python fit_droop_undershoot.py 146 -10 -12.1 4 9
 python fit_droop_undershoot.py 146 0 -3.3 4 9
 
-python fit_droop_undershoot.py 147 -55 -55.1 4 10
-python fit_droop_undershoot.py 147 -50 -49.1 4 10
-python fit_droop_undershoot.py 147 -45 -44.6 4 10
-python fit_droop_undershoot.py 147 -40 -40.5 4 10
-python fit_droop_undershoot.py 147 -35 -35 4 10
-python fit_droop_undershoot.py 147 -20 -21.4 4 10
-python fit_droop_undershoot.py 147 -10 -12.1 4 10
-python fit_droop_undershoot.py 147 0 -3.3 4 10
+python fit_droop_undershoot.py 147 -55 -54.9 4 11
+python fit_droop_undershoot.py 147 -50 -50.3 4 11
+python fit_droop_undershoot.py 147 -45 -45.1 4 11
+python fit_droop_undershoot.py 147 -40 -40.5 4 11
+python fit_droop_undershoot.py 147 -35 -35.4 4 11
+python fit_droop_undershoot.py 147 -20 -17.6 4 11
+python fit_droop_undershoot.py 147 -10 -8.9 4 11
+python fit_droop_undershoot.py 147 0 -0.4 4 11
 
 python fit_droop_undershoot.py 148 -55 -55.1 4 11
 python fit_droop_undershoot.py 148 -50 -49.1 4 11
@@ -1306,14 +1306,14 @@ python fit_droop_undershoot.py 149 -20 -21.4 4 12
 python fit_droop_undershoot.py 149 -10 -12 4 12
 python fit_droop_undershoot.py 149 0 -3.3 4 12
 
-python fit_droop_undershoot.py 150 -55 -54.5 4 15
-python fit_droop_undershoot.py 150 -50 -51.3 4 15
-python fit_droop_undershoot.py 150 -45 -44.2 4 15
-python fit_droop_undershoot.py 150 -40 -40.7 4 15
-python fit_droop_undershoot.py 150 -35 -34.2 4 15
-python fit_droop_undershoot.py 150 -20 -20.1 4 15
-python fit_droop_undershoot.py 150 -10 -9.7 4 15
-python fit_droop_undershoot.py 150 0 -1.6 4 15
+python fit_droop_undershoot.py 150 -55 -54.9 4 12
+python fit_droop_undershoot.py 150 -50 -50.4 4 12
+python fit_droop_undershoot.py 150 -45 -45.0 4 12
+python fit_droop_undershoot.py 150 -40 -40.7 4 12
+python fit_droop_undershoot.py 150 -35 -35.4 4 12
+python fit_droop_undershoot.py 150 -20 -17.7 4 12
+python fit_droop_undershoot.py 150 -10 -8.9 4 12
+python fit_droop_undershoot.py 150 0 -0.4 4 12
 
 python fit_droop_undershoot.py 151 -55 -54.4 4 16
 python fit_droop_undershoot.py 151 -50 -51.4 4 16
@@ -1324,14 +1324,14 @@ python fit_droop_undershoot.py 151 -20 -20.2 4 16
 python fit_droop_undershoot.py 151 -10 -9.7 4 16
 python fit_droop_undershoot.py 151 0 -1.6 4 16
 
-python fit_droop_undershoot.py 152 -55 -54.9 4 15
-python fit_droop_undershoot.py 152 -50 -49.9 4 15
-python fit_droop_undershoot.py 152 -45 -43.7 4 15
-python fit_droop_undershoot.py 152 -40 -41 4 15
-python fit_droop_undershoot.py 152 -35 -34.3 4 15
-python fit_droop_undershoot.py 152 -20 -21.1 4 15
-python fit_droop_undershoot.py 152 -10 -11.7 4 15
-python fit_droop_undershoot.py 152 0 -3.1 4 15
+python fit_droop_undershoot.py 152 -55 -54.6 4 13
+python fit_droop_undershoot.py 152 -50 -51.1 4 13
+python fit_droop_undershoot.py 152 -45 -44.7 4 13
+python fit_droop_undershoot.py 152 -40 -41.1 4 13
+python fit_droop_undershoot.py 152 -35 -34.8 4 13
+python fit_droop_undershoot.py 152 -20 -18.2 4 13
+python fit_droop_undershoot.py 152 -10 -8.5 4 13
+python fit_droop_undershoot.py 152 0 -0.7 4 13
 
 python fit_droop_undershoot.py 153 -55 -54.8 4 16
 python fit_droop_undershoot.py 153 -50 -50.1 4 16
@@ -1342,86 +1342,86 @@ python fit_droop_undershoot.py 153 -20 -20.9 4 16
 python fit_droop_undershoot.py 153 -10 -11.7 4 16
 python fit_droop_undershoot.py 153 0 -3.1 4 16
 
-python fit_droop_undershoot.py 154 -55 -56.3 4 5
-python fit_droop_undershoot.py 154 -50 -47.8 4 5
-python fit_droop_undershoot.py 154 -45 -45.9 4 5
-python fit_droop_undershoot.py 154 -40 -38.1 4 5
-python fit_droop_undershoot.py 154 -35 -35.8 4 5
-python fit_droop_undershoot.py 154 -20 -18.7 4 5
-python fit_droop_undershoot.py 154 -10 -10.2 4 5
-python fit_droop_undershoot.py 154 0 1.3 4 5
+python fit_droop_undershoot.py 154 -55 -54.2 4 14
+python fit_droop_undershoot.py 154 -50 -48.6 4 14
+python fit_droop_undershoot.py 154 -45 -45.8 4 14
+python fit_droop_undershoot.py 154 -40 -39.2 4 14
+python fit_droop_undershoot.py 154 -35 -35.4 4 14
+python fit_droop_undershoot.py 154 -20 -17.3 4 14
+python fit_droop_undershoot.py 154 -10 -9.9 4 14
+python fit_droop_undershoot.py 154 0 0.90 4 14
 
-python fit_droop_undershoot.py 155 -55 -56.2 4 6
-python fit_droop_undershoot.py 155 -50 -47.9 4 6
-python fit_droop_undershoot.py 155 -45 -45.9 4 6
-python fit_droop_undershoot.py 155 -40 -38.2 4 6
-python fit_droop_undershoot.py 155 -35 -35.7 4 6
-python fit_droop_undershoot.py 155 -20 -18.7 4 6
-python fit_droop_undershoot.py 155 -10 -10.2 4 6
-python fit_droop_undershoot.py 155 0 1.2 4 6
+python fit_droop_undershoot.py 155 -55 -54.5 4 15
+python fit_droop_undershoot.py 155 -50 -51.2 4 15
+python fit_droop_undershoot.py 155 -45 -44.3 4 15
+python fit_droop_undershoot.py 155 -40 -41.3 4 15
+python fit_droop_undershoot.py 155 -35 -34.8 4 15
+python fit_droop_undershoot.py 155 -20 -18.4 4 15
+python fit_droop_undershoot.py 155 -10 -8.5 4 15
+python fit_droop_undershoot.py 155 0 -0.8 4 15
 
-python fit_droop_undershoot.py 156 -55 -56 4 7
-python fit_droop_undershoot.py 156 -50 -48 4 7
-python fit_droop_undershoot.py 156 -45 -45.8 4 7
-python fit_droop_undershoot.py 156 -40 -38.3 4 7
-python fit_droop_undershoot.py 156 -35 -35.5 4 7
-python fit_droop_undershoot.py 156 -20 -18.9 4 7
-python fit_droop_undershoot.py 156 -10 -10.1 4 7
-python fit_droop_undershoot.py 156 0 1.1 4 7
+python fit_droop_undershoot.py 156 -55 -54.5 4 16
+python fit_droop_undershoot.py 156 -50 -51.3 4 16
+python fit_droop_undershoot.py 156 -45 -44.2 4 16
+python fit_droop_undershoot.py 156 -40 -41.4 4 16
+python fit_droop_undershoot.py 156 -35 -34.8 4 16
+python fit_droop_undershoot.py 156 -20 -18.5 4 16
+python fit_droop_undershoot.py 156 -10 -8.4 4 16
+python fit_droop_undershoot.py 156 0 -0.9 4 16
 
-python fit_droop_undershoot.py 157 -55 -55.8 4 8
-python fit_droop_undershoot.py 157 -50 -48 4 8
-python fit_droop_undershoot.py 157 -45 -45.7 4 8
-python fit_droop_undershoot.py 157 -40 -38.4 4 8
-python fit_droop_undershoot.py 157 -35 -35.5 4 8
-python fit_droop_undershoot.py 157 -20 -19 4 8
-python fit_droop_undershoot.py 157 -10 -10.1 4 8
-python fit_droop_undershoot.py 157 0 1.1 4 8
+python fit_droop_undershoot.py 157 -55 -55.2 4 5
+python fit_droop_undershoot.py 157 -50 -51.1 4 5
+python fit_droop_undershoot.py 157 -45 -43.1 4 5
+python fit_droop_undershoot.py 157 -40 -38.8 4 5
+python fit_droop_undershoot.py 157 -35 -35.4 4 5
+python fit_droop_undershoot.py 157 -20 -18.4 4 5
+python fit_droop_undershoot.py 157 -10 -10.5 4 5
+python fit_droop_undershoot.py 157 0 0.4 4 5
 
-python fit_droop_undershoot.py 158 -55 -54.5 4 9
-python fit_droop_undershoot.py 158 -50 -48.9 4 9
-python fit_droop_undershoot.py 158 -45 -45.1 4 9
-python fit_droop_undershoot.py 158 -40 -39.1 4 9
-python fit_droop_undershoot.py 158 -35 -35 4 9
-python fit_droop_undershoot.py 158 -20 -19.5 4 9
-python fit_droop_undershoot.py 158 -10 -9.7 4 9
-python fit_droop_undershoot.py 158 0 0.7 4 9
+python fit_droop_undershoot.py 158 -55 -55.2 4 6
+python fit_droop_undershoot.py 158 -50 -50.9 4 6
+python fit_droop_undershoot.py 158 -45 -43.2 4 6
+python fit_droop_undershoot.py 158 -40 -38.9 4 6
+python fit_droop_undershoot.py 158 -35 -35.4 4 6
+python fit_droop_undershoot.py 158 -20 -18.5 4 6
+python fit_droop_undershoot.py 158 -10 -10.4 4 6
+python fit_droop_undershoot.py 158 0 0.4 4 6
 
-python fit_droop_undershoot.py 159 -55 -54.5 4 10
-python fit_droop_undershoot.py 159 -50 -49 4 10
-python fit_droop_undershoot.py 159 -45 -45 4 10
-python fit_droop_undershoot.py 159 -40 -39.2 4 10
-python fit_droop_undershoot.py 159 -35 -35 4 10
-python fit_droop_undershoot.py 159 -20 -19.6 4 10
-python fit_droop_undershoot.py 159 -10 -9.6 4 10
-python fit_droop_undershoot.py 159 0 0.6 4 10
+python fit_droop_undershoot.py 159 -55 -55.3 4 7
+python fit_droop_undershoot.py 159 -50 -50.9 4 7
+python fit_droop_undershoot.py 159 -45 -43.3 4 7
+python fit_droop_undershoot.py 159 -40 -39.0 4 7
+python fit_droop_undershoot.py 159 -35 -35.3 4 7
+python fit_droop_undershoot.py 159 -20 -18.6 4 7
+python fit_droop_undershoot.py 159 -10 -10.4 4 7
+python fit_droop_undershoot.py 159 0 0.3 4 7
 
-python fit_droop_undershoot.py 160 -55 -54.4 4 11
-python fit_droop_undershoot.py 160 -50 -49.2 4 11
-python fit_droop_undershoot.py 160 -45 -44.9 4 11
-python fit_droop_undershoot.py 160 -40 -39.2 4 11
-python fit_droop_undershoot.py 160 -35 -34.9 4 11
-python fit_droop_undershoot.py 160 -20 -19.7 4 11
-python fit_droop_undershoot.py 160 -10 -9.5 4 11
-python fit_droop_undershoot.py 160 0 0.5 4 11
+python fit_droop_undershoot.py 160 -55 -55.4 4 8
+python fit_droop_undershoot.py 160 -50 -50.8 4 8
+python fit_droop_undershoot.py 160 -45 -43.5 4 8
+python fit_droop_undershoot.py 160 -40 -39.0 4 8
+python fit_droop_undershoot.py 160 -35 -35.2 4 8
+python fit_droop_undershoot.py 160 -20 -18.6 4 8
+python fit_droop_undershoot.py 160 -10 -10.4 4 8
+python fit_droop_undershoot.py 160 0 0.2 4 8
 
-python fit_droop_undershoot.py 161 -55 -54.3 4 12
-python fit_droop_undershoot.py 161 -50 -49 4 12
-python fit_droop_undershoot.py 161 -45 -44.7 4 12
-python fit_droop_undershoot.py 161 -40 -39.4 4 12
-python fit_droop_undershoot.py 161 -35 -34.8 4 12
-python fit_droop_undershoot.py 161 -20 -19.9 4 12
-python fit_droop_undershoot.py 161 -10 -9.4 4 12
-python fit_droop_undershoot.py 161 0 0.4 4 12
+python fit_droop_undershoot.py 161 -55 -54.2 4 13
+python fit_droop_undershoot.py 161 -50 -48.9 13
+python fit_droop_undershoot.py 161 -45 -45.5 4 13
+python fit_droop_undershoot.py 161 -40 -39.3 4 13
+python fit_droop_undershoot.py 161 -35 -35.1 4 13
+python fit_droop_undershoot.py 161 -20 -17.6 4 13
+python fit_droop_undershoot.py 161 -10 -9.7 4 13
+python fit_droop_undershoot.py 161 0 0.8 4 13
 
-python fit_droop_undershoot.py 162 -55 -54.5 4 13
-python fit_droop_undershoot.py 162 -50 -50 4 13
-python fit_droop_undershoot.py 162 -45 -44 4 13
-python fit_droop_undershoot.py 162 -40 -40 4 13
-python fit_droop_undershoot.py 162 -35 -34.4 4 13
-python fit_droop_undershoot.py 162 -20 -20 4 13
-python fit_droop_undershoot.py 162 -10 -9.2 4 13
-python fit_droop_undershoot.py 162 0 -0.2 4 13
+python fit_droop_undershoot.py 162 -55 -54.2 4 14
+python fit_droop_undershoot.py 162 -50 -48.8 4 14
+python fit_droop_undershoot.py 162 -45 -45.6 4 14
+python fit_droop_undershoot.py 162 -40 -39.3 4 14
+python fit_droop_undershoot.py 162 -35 -35.2 4 14
+python fit_droop_undershoot.py 162 -20 -17.5 4 14
+python fit_droop_undershoot.py 162 -10 -9.8 4 14
+python fit_droop_undershoot.py 162 0 0.90 4 14
 
 python fit_droop_undershoot.py 163 -55 -54.6 4 14
 python fit_droop_undershoot.py 163 -50 -50 4 14
@@ -1432,155 +1432,92 @@ python fit_droop_undershoot.py 163 -20 -20.1 4 14
 python fit_droop_undershoot.py 163 -10 -9.1 4 14
 python fit_droop_undershoot.py 163 0 -0.4 4 14
 
-python fit_droop_undershoot.py 164 -55 -54.7 4 15
-python fit_droop_undershoot.py 164 -50 -50.2 4 15
-python fit_droop_undershoot.py 164 -45 -43.8 4 15
-python fit_droop_undershoot.py 164 -40 -40.2 4 15
-python fit_droop_undershoot.py 164 -35 -34.2 4 15
-python fit_droop_undershoot.py 164 -20 -20.2 4 15
-python fit_droop_undershoot.py 164 -10 -9 4 15
-python fit_droop_undershoot.py 164 0 -0.5 4 15
+python fit_droop_undershoot.py 164 -55 -54.7 4 16
+python fit_droop_undershoot.py 164 -50 -50.2 4 16
+python fit_droop_undershoot.py 164 -45 -43.8 4 16
+python fit_droop_undershoot.py 164 -40 -40.2 4 16
+python fit_droop_undershoot.py 164 -35 -34.2 4 16
+python fit_droop_undershoot.py 164 -20 -20.2 4 16
+python fit_droop_undershoot.py 164 -10 -9 4 16
+python fit_droop_undershoot.py 164 0 -0.5 4 16
 
-python fit_droop_undershoot.py 165 -55 -54.7 4 16
-python fit_droop_undershoot.py 165 -50 -50.4 4 16
-python fit_droop_undershoot.py 165 -45 -43.8 4 16
-python fit_droop_undershoot.py 165 -40 -40.4 4 16
-python fit_droop_undershoot.py 165 -35 -34.1 4 16
-python fit_droop_undershoot.py 165 -20 -20.3 4 16
-python fit_droop_undershoot.py 165 -10 -8.9 4 16
-python fit_droop_undershoot.py 165 0 -0.6 4 16
+python fit_droop_undershoot.py 165 -55 -55.5 4 8
+python fit_droop_undershoot.py 165 -50 -51.4 4 8
+python fit_droop_undershoot.py 165 -45 -44.2 4 8
+python fit_droop_undershoot.py 165 -40 -39.5 4 8
+python fit_droop_undershoot.py 165 -35 -33.4 4 8
+python fit_droop_undershoot.py 165 -20 -20.7 4 8
+python fit_droop_undershoot.py 165 -10 -10.1 4 8
+python fit_droop_undershoot.py 165 0 -0.6 4 8
 
-python fit_droop_undershoot.py 166 -55 -55.6 4 5
-python fit_droop_undershoot.py 166 -50 -48.2 4 5
-python fit_droop_undershoot.py 166 -45 -45.7 4 5
-python fit_droop_undershoot.py 166 -40 -39.3 4 5
-python fit_droop_undershoot.py 166 -35 -35.9 4 5
-python fit_droop_undershoot.py 166 -20 -19.1 4 5
-python fit_droop_undershoot.py 166 -10 -9.8 4 5
-python fit_droop_undershoot.py 166 0 0.9 4 5
+python fit_droop_undershoot.py 166 -55 -56.0 4 9
+python fit_droop_undershoot.py 166 -50 -50.9 4 9
+python fit_droop_undershoot.py 166 -45 -44.6 4 9
+python fit_droop_undershoot.py 166 -40 -38.8 4 9
+python fit_droop_undershoot.py 166 -35 -33.8 4 9
+python fit_droop_undershoot.py 166 -20 -20.4 4 9
+python fit_droop_undershoot.py 166 -10 -10.4 4 9
+python fit_droop_undershoot.py 166 0 -0.4 4 9
 
-python fit_droop_undershoot.py 167 -55 -55.5 4 6
-python fit_droop_undershoot.py 167 -50 -48.3 4 6
-python fit_droop_undershoot.py 167 -45 -45.6 4 6
-python fit_droop_undershoot.py 167 -40 -39.4 4 6
-python fit_droop_undershoot.py 167 -35 -35.8 4 6
-python fit_droop_undershoot.py 167 -20 -19.1 4 6
-python fit_droop_undershoot.py 167 -10 -9.7 4 6
-python fit_droop_undershoot.py 167 0 0.8 4 6
+python fit_droop_undershoot.py 167 -55 -56.1 4 10
+python fit_droop_undershoot.py 167 -50 -50.8 4 10
+python fit_droop_undershoot.py 167 -45 -44.7 4 10
+python fit_droop_undershoot.py 167 -40 -38.7 4 10
+python fit_droop_undershoot.py 167 -35 -33.9 4 10
+python fit_droop_undershoot.py 167 -20 -20.4 4 10
+python fit_droop_undershoot.py 167 -10 -10.4 4 10
+python fit_droop_undershoot.py 167 0 -0.4 4 10
 
-python fit_droop_undershoot.py 168 -55 -55.5 4 7
-python fit_droop_undershoot.py 168 -50 -48.5 4 7
-python fit_droop_undershoot.py 168 -45 -45.5 4 7
-python fit_droop_undershoot.py 168 -40 -39.5 4 7
-python fit_droop_undershoot.py 168 -35 -35.7 4 7
-python fit_droop_undershoot.py 168 -20 -19.2 4 7
-python fit_droop_undershoot.py 168 -10 -9.5 4 7
-python fit_droop_undershoot.py 168 0 0.7 4 7
+python fit_droop_undershoot.py 168 -55 -56.1 4 11
+python fit_droop_undershoot.py 168 -50 -50.6 4 11
+python fit_droop_undershoot.py 168 -45 -44.8 4 11
+python fit_droop_undershoot.py 168 -40 -38.6 4 11
+python fit_droop_undershoot.py 168 -35 -34.0 4 11
+python fit_droop_undershoot.py 168 -20 -20.4 4 11
+python fit_droop_undershoot.py 168 -10 -10.4 4 11
+python fit_droop_undershoot.py 168 0 -0.4 4 11
 
-python fit_droop_undershoot.py 169 -55 -55.4 4 8
-python fit_droop_undershoot.py 169 -50 -48.5 4 8
-python fit_droop_undershoot.py 169 -45 -45.3 4 8
-python fit_droop_undershoot.py 169 -40 -39.6 4 8
-python fit_droop_undershoot.py 169 -35 -35.7 4 8
-python fit_droop_undershoot.py 169 -20 -19.2 4 8
-python fit_droop_undershoot.py 169 -10 -9.4 4 8
-python fit_droop_undershoot.py 169 0 0.6 4 8
+python fit_droop_undershoot.py 169 -55 -56.1 4 12
+python fit_droop_undershoot.py 169 -50 -50.5 4 12
+python fit_droop_undershoot.py 169 -45 -44.9 4 12
+python fit_droop_undershoot.py 169 -40 -38.5 4 12
+python fit_droop_undershoot.py 169 -35 -34.0 4 12
+python fit_droop_undershoot.py 169 -20 -20.3 4 12
+python fit_droop_undershoot.py 169 -10 -10.5 4 12
+python fit_droop_undershoot.py 169 0 -0.3 4 12
 
-python fit_droop_undershoot.py 170 -55 -55.2 4 9
-python fit_droop_undershoot.py 170 -50 -49.1 4 9
-python fit_droop_undershoot.py 170 -45 -44.9 4 9
-python fit_droop_undershoot.py 170 -40 -39.9 4 9
-python fit_droop_undershoot.py 170 -35 -35.2 4 9
-python fit_droop_undershoot.py 170 -20 -19.7 4 9
-python fit_droop_undershoot.py 170 -10 -9 4 9
-python fit_droop_undershoot.py 170 0 0.2 4 9
+python fit_droop_undershoot.py 170 -55 -56.4 4 13
+python fit_droop_undershoot.py 170 -50 -50.1 4 13
+python fit_droop_undershoot.py 170 -45 -45.3 4 13
+python fit_droop_undershoot.py 170 -40 -37.9 4 13
+python fit_droop_undershoot.py 170 -35 -34.4 4 13
+python fit_droop_undershoot.py 170 -20 -20.1 4 13
+python fit_droop_undershoot.py 170 -10 -10.7 4 13
+python fit_droop_undershoot.py 170 0 -0.1 4 13
 
-python fit_droop_undershoot.py 171 -55 -55.1 4 10
-python fit_droop_undershoot.py 171 -50 -49.1 4 10
-python fit_droop_undershoot.py 171 -45 -44.9 4 10
-python fit_droop_undershoot.py 171 -40 -40 4 10
-python fit_droop_undershoot.py 171 -35 -35.2 4 10
-python fit_droop_undershoot.py 171 -20 -19.8 4 10
-python fit_droop_undershoot.py 171 -10 -8.9 4 10
-python fit_droop_undershoot.py 171 0 0 4 10
+python fit_droop_undershoot.py 171 -55 -56.5 4 14
+python fit_droop_undershoot.py 171 -50 -50.0 4 14
+python fit_droop_undershoot.py 171 -45 -45.4 4 14
+python fit_droop_undershoot.py 171 -40 -37.8 4 14
+python fit_droop_undershoot.py 171 -35 -34.5 4 14
+python fit_droop_undershoot.py 171 -20 -20.0 4 14
+python fit_droop_undershoot.py 171 -10 -10.8 4 14
+python fit_droop_undershoot.py 171 0 -0.1 4 14
 
-python fit_droop_undershoot.py 172 -55 -55 4 11
-python fit_droop_undershoot.py 172 -50 -49.2 4 11
-python fit_droop_undershoot.py 172 -45 -44.7 4 11
-python fit_droop_undershoot.py 172 -40 -40.1 4 11
-python fit_droop_undershoot.py 172 -35 -35.1 4 11
-python fit_droop_undershoot.py 172 -20 -19.9 4 11
-python fit_droop_undershoot.py 172 -10 -8.8 4 11
-python fit_droop_undershoot.py 172 0 0 4 11
+python fit_droop_undershoot.py 172 -55 -56.5 4 15
+python fit_droop_undershoot.py 172 -50 -50.0 4 15
+python fit_droop_undershoot.py 172 -45 -45.5 4 15
+python fit_droop_undershoot.py 172 -40 -37.6 4 15
+python fit_droop_undershoot.py 172 -35 -34.6 4 15
+python fit_droop_undershoot.py 172 -20 -20.0 4 15
+python fit_droop_undershoot.py 172 -10 -10.8 4 15
+python fit_droop_undershoot.py 172 0 -0.1 4 15
 
-python fit_droop_undershoot.py 173 -55 -55 4 12
-python fit_droop_undershoot.py 173 -50 -49.3 4 12
-python fit_droop_undershoot.py 173 -45 -44.6 4 12
-python fit_droop_undershoot.py 173 -40 -40.2 4 12
-python fit_droop_undershoot.py 173 -35 -35.1 4 12
-python fit_droop_undershoot.py 173 -20 -20 4 12
-python fit_droop_undershoot.py 173 -10 -8.8 4 12
-python fit_droop_undershoot.py 173 0 -0.1 4 12
-
-python fit_droop_undershoot.py 174 -55 -49.7 4 13
-python fit_droop_undershoot.py 174 -50 -44.2 4 13
-python fit_droop_undershoot.py 174 -45 -40.6 4 13
-python fit_droop_undershoot.py 174 -40 -34.7 4 13
-python fit_droop_undershoot.py 174 -35 -20.4 4 13
-python fit_droop_undershoot.py 174 -20 -8.5 4 13
-python fit_droop_undershoot.py 174 -10 -0.6 4 13
-python fit_droop_undershoot.py 174 0 -0.2 4 13
-
-python fit_droop_undershoot.py 175 -55 -55.9 4 5
-python fit_droop_undershoot.py 175 -50 -49.2 4 5
-python fit_droop_undershoot.py 175 -45 -45.8 4 5
-python fit_droop_undershoot.py 175 -40 -39.3 4 5
-python fit_droop_undershoot.py 175 -35 -35.5 4 5
-python fit_droop_undershoot.py 175 -20 -18.4 4 5
-python fit_droop_undershoot.py 175 -10 -10.8 4 5
-python fit_droop_undershoot.py 175 0 -0.9 4 5
-
-python fit_droop_undershoot.py 176 -55 -55.9 4 6
-python fit_droop_undershoot.py 176 -50 -49.4 4 6
-python fit_droop_undershoot.py 176 -45 -45.8 4 6
-python fit_droop_undershoot.py 176 -40 -39.4 4 6
-python fit_droop_undershoot.py 176 -35 -35.5 4 6
-python fit_droop_undershoot.py 176 -20 -18.4 4 6
-python fit_droop_undershoot.py 176 -10 -10.7 4 6
-python fit_droop_undershoot.py 176 0 -0.9 4 6
-
-python fit_droop_undershoot.py 177 -55 -54.3 4 16
-python fit_droop_undershoot.py 177 -50 -50.1 4 16
-python fit_droop_undershoot.py 177 -45 -44 4 16
-python fit_droop_undershoot.py 177 -40 -40.8 4 16
-python fit_droop_undershoot.py 177 -35 -34.4 4 16
-python fit_droop_undershoot.py 177 -20 -20.7 4 16
-python fit_droop_undershoot.py 177 -10 -8.2 4 16
-python fit_droop_undershoot.py 177 0 -1 4 16
-
-python fit_droop_undershoot.py 178 -55 -55.9 4 7
-python fit_droop_undershoot.py 178 -50 -49.5 4 7
-python fit_droop_undershoot.py 178 -45 -45.7 4 7
-python fit_droop_undershoot.py 178 -40 -39.5 4 7
-python fit_droop_undershoot.py 178 -35 -35.4 4 7
-python fit_droop_undershoot.py 178 -20 -18.5 4 7
-python fit_droop_undershoot.py 178 -10 -10.7 4 7
-python fit_droop_undershoot.py 178 0 -1 4 7
-
-python fit_droop_undershoot.py 179 -55 -55.8 4 8
-python fit_droop_undershoot.py 179 -50 -49.5 4 8
-python fit_droop_undershoot.py 179 -45 -45.7 4 8
-python fit_droop_undershoot.py 179 -40 -39.5 4 8
-python fit_droop_undershoot.py 179 -35 -35.4 4 8
-python fit_droop_undershoot.py 179 -20 -18.6 4 8
-python fit_droop_undershoot.py 179 -10 -10.6 4 8
-python fit_droop_undershoot.py 179 0 -1 4 8
-
-python fit_droop_undershoot.py 180 -55 -55.4 4 9
-python fit_droop_undershoot.py 180 -50 -50.1 4 9
-python fit_droop_undershoot.py 180 -45 -45.2 4 9
-python fit_droop_undershoot.py 180 -40 -39.9 4 9
-python fit_droop_undershoot.py 180 -35 -35 4 9
-python fit_droop_undershoot.py 180 -20 -19.2 4 9
-python fit_droop_undershoot.py 180 -10 -10.3 4 9
-python fit_droop_undershoot.py 180 0 -1.2 4 9
+python fit_droop_undershoot.py 173 -55 -56.5 4 16
+python fit_droop_undershoot.py 173 -50 -49.8 4 16
+python fit_droop_undershoot.py 173 -45 -45.6 4 16
+python fit_droop_undershoot.py 173 -40 -37.5 4 16
+python fit_droop_undershoot.py 173 -35 -34.7 4 16
+python fit_droop_undershoot.py 173 -20 -19.9 4 16
+python fit_droop_undershoot.py 173 -10 -10.8 4 16
+python fit_droop_undershoot.py 173 0 -0.1 4 16
