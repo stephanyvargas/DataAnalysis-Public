@@ -131,7 +131,7 @@ def plot_results_undershoot(time, voltage, amp_u, tau_u, stau_u):
 	plt.clf()
 	plt.cla()
 	plt.close()
-	
+
 
 
 def open_fit_return():
@@ -224,6 +224,7 @@ if __name__ == "__main__":
 	plt.rcParams.update({'font.size': 13})
 	global Directory_board
 	Directory_board = int(sys.argv[1]) #17,18,19,20
+	print('\n\n', Directory_board, '\n\n')
 	global Directory_temp
 	Directory_temp = sys.argv[2] #-55,-50,-45,-40,-35,20
 	global Temperature
