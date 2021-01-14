@@ -810,90 +810,98 @@ def get_acceptance_limits(df_temp):
     print(regular_HVBs['Alpha'].tolist())
 
     fig, axs = plt.subplots(2, 4)
-    fig.suptitle('Summary of variables for HVBoards', fontsize=22)
 
     HVB_num_temp = np.asarray(df_temp.Board_ID.str.extract('(\d+)'))
     n_temp = HVB_num_temp[:,0]
     num_temp = [float((n_temp[i])) for i in range(len(n_temp))]
     df_temp['Number_ID'] = num_temp
 
+    fig.suptitle(f'Summary of variables for {len(num_temp)} High Voltage Boards', fontsize=22)
 
-    axs[0,0].errorbar(num, df['Alpha'], yerr=df['Error_Alpha'], fmt='o')
+    #axs[0,0].errorbar(num, df['Alpha'], yerr=df['Error_Alpha'], fmt='o')
     axs[0,0].errorbar(num_temp, df_temp['Alpha'], yerr=df_temp['Error_Alpha'], fmt='p')
     axs[0,0].set_title('Alpha',fontsize=20)
     axs[0,0].tick_params(axis='x', labelsize=14)
     axs[0,0].tick_params(axis='y', labelsize=14)
-    axs[0,0].set_ylabel('Value', fontsize = 16)
+    axs[0,0].set_ylabel(r'$\alpha$ [adimentional]', fontsize = 16)
     axs[0,0].grid(linestyle='dotted')
-    axs[0,0].axhspan(upper_cut[0], lower_cut[0], facecolor='royalblue', alpha=0.2)
+    axs[0,0].axhspan(np.mean(df_temp['Alpha']) + 2*np.std(df_temp['Alpha']), np.mean(df_temp['Alpha']) - 2*np.std(df_temp['Alpha']), facecolor='royalblue', alpha=0.2)
+    #axs[0,0].axhspan(upper_cut[0], lower_cut[0], facecolor='royalblue', alpha=0.2)
 
-    axs[1,0].errorbar(num, df['Beta'], yerr=df['Error_Beta'], fmt='o')
-    axs[1,0].errorbar(num_temp, df_temp['Beta'], yerr=df_temp['Error_Beta'], fmt='p')
+    #axs[1,0].errorbar(num, df['Beta'], yerr=df['Error_Beta'], fmt='o')
+    axs[1,0].errorbar(num_temp, df_temp['Beta']*1e6, yerr=df_temp['Error_Beta'], fmt='p')
     axs[1,0].set_title('Beta',fontsize=20)
     axs[1,0].tick_params(axis='x', labelsize=14)
     axs[1,0].tick_params(axis='y', labelsize=14)
     axs[1,0].set_xlabel('HVBoard ID', fontsize = 16)
-    axs[1,0].set_ylabel('Value', fontsize = 16)
+    axs[1,0].set_ylabel(r'$\beta$ [$\mu s$]', fontsize = 16)
     axs[1,0].grid(linestyle='dotted')
-    axs[1,0].axhspan(upper_cut[1], lower_cut[1], facecolor='royalblue', alpha=0.2)
+    axs[1,0].axhspan((np.mean(df_temp['Beta']) + 2*np.std(df_temp['Beta']))*1e6, (np.mean(df_temp['Beta']) - 2*np.std(df_temp['Beta']))*1e6, facecolor='royalblue', alpha=0.2)
+    #axs[1,0].axhspan(upper_cut[1], lower_cut[1], facecolor='royalblue', alpha=0.2)
 
-    axs[0,1].errorbar(num, df['p0'], yerr=df['Error_p0'], fmt='o')
-    axs[0,1].errorbar(num_temp, df_temp['p0'], yerr=df_temp['Error_p0'], fmt='p')
+    #axs[0,1].errorbar(num, df['p0'], yerr=df['Error_p0'], fmt='o')
+    axs[0,1].errorbar(num_temp, df_temp['p0']*1e6, yerr=df_temp['Error_p0'], fmt='p', color='orangered')
     axs[0,1].set_title('P0',fontsize=20)
     axs[0,1].tick_params(axis='x', labelsize=14)
     axs[0,1].tick_params(axis='y', labelsize=14)
-    axs[0,1].set_ylabel('Value', fontsize = 16)
+    axs[0,1].set_ylabel(r'$p_0$ [$\mu s$]', fontsize = 16)
     axs[0,1].grid(linestyle='dotted')
-    axs[0,1].axhspan(upper_cut[2], lower_cut[2], facecolor='orangered', alpha=0.2)
+    axs[0,1].axhspan((np.mean(df_temp['p0']) + 2*np.std(df_temp['p0']))*1e6, (np.mean(df_temp['p0']) - 2*np.std(df_temp['p0']))*1e6, facecolor='orangered', alpha=0.2)
+    #axs[0,1].axhspan(upper_cut[2], lower_cut[2], facecolor='orangered', alpha=0.2)
 
-    axs[1,1].errorbar(num, df['p3'], yerr=df['Error_p3'], fmt='o')
-    axs[1,1].errorbar(num_temp, df_temp['p3'], yerr=df_temp['Error_p3'], fmt='p')
+    #axs[1,1].errorbar(num, df['p3'], yerr=df['Error_p3'], fmt='o')
+    axs[1,1].errorbar(num_temp, df_temp['p3']*1e6, yerr=df_temp['Error_p3'], fmt='p', color='orangered')
     axs[1,1].set_title('P3',fontsize=20)
     axs[1,1].tick_params(axis='x', labelsize=14)
     axs[1,1].tick_params(axis='y', labelsize=14)
     axs[1,1].set_xlabel('HVBoard ID', fontsize = 16)
-    axs[1,1].set_ylabel('Value', fontsize = 16)
+    axs[1,1].set_ylabel(r'$p_3$ [$\mu s$]', fontsize = 16)
     axs[1,1].grid(linestyle='dotted')
-    axs[1,1].axhspan(upper_cut[5], lower_cut[5], facecolor='orangered', alpha=0.2)
+    axs[1,1].axhspan((np.mean(df_temp['p3']) + 2*np.std(df_temp['p3']))*1e6, (np.mean(df_temp['p3']) - 2*np.std(df_temp['p3']))*1e6, facecolor='orangered', alpha=0.2)
+    #axs[1,1].axhspan(upper_cut[5], lower_cut[5], facecolor='orangered', alpha=0.2)
 
-    axs[0,2].errorbar(num, df['p1'], yerr=df['Error_p1'], fmt='o')
-    axs[0,2].errorbar(num_temp, df_temp['p1'], yerr=df_temp['Error_p1'], fmt='p')
+    #axs[0,2].errorbar(num, df['p1'], yerr=df['Error_p1'], fmt='o')
+    axs[0,2].errorbar(num_temp, df_temp['p1']*1e6, yerr=df_temp['Error_p1'], fmt='p', color='darkorchid')
     axs[0,2].set_title('P1',fontsize=20)
     axs[0,2].tick_params(axis='x', labelsize=14)
     axs[0,2].tick_params(axis='y', labelsize=14)
-    axs[0,2].set_ylabel('Value', fontsize = 16)
+    axs[0,2].set_ylabel(r'$p_1$ [$\mu s$]', fontsize = 16)
     axs[0,2].grid(linestyle='dotted')
-    axs[0,2].axhspan(upper_cut[3], lower_cut[3], facecolor='darkorchid', alpha=0.2)
+    axs[0,2].axhspan((np.mean(df_temp['p1']) + 2*np.std(df_temp['p1']))*1e6, (np.mean(df_temp['p1']) - 2*np.std(df_temp['p1']))*1e6, facecolor='darkorchid', alpha=0.2)
+    #axs[0,2].axhspan(upper_cut[3], lower_cut[3], facecolor='darkorchid', alpha=0.2)
 
-    axs[1,2].errorbar(num, df['p4'], yerr=df['Error_p4'], fmt='o')
-    axs[1,2].errorbar(num_temp, df_temp['p4'], yerr=df_temp['Error_p4'], fmt='p')
+    #axs[1,2].errorbar(num, df['p4'], yerr=df['Error_p4'], fmt='o')
+    axs[1,2].errorbar(num_temp, df_temp['p4']*1e6, yerr=df_temp['Error_p4'], fmt='p', color='darkorchid')
     axs[1,2].set_title('P4',fontsize=20)
     axs[1,2].tick_params(axis='x', labelsize=14)
     axs[1,2].tick_params(axis='y', labelsize=14)
     axs[1,2].set_xlabel('HVBoard ID', fontsize = 16)
-    axs[1,2].set_ylabel('Value', fontsize = 16)
+    axs[1,2].set_ylabel(r'$p_4$ [$\mu s$]', fontsize = 16)
     axs[1,2].grid(linestyle='dotted')
-    axs[1,2].axhspan(upper_cut[6], lower_cut[6], facecolor='darkorchid', alpha=0.2)
+    axs[1,2].axhspan((np.mean(df_temp['p4']) + 2*np.std(df_temp['p4']))*1e6, (np.mean(df_temp['p4']) - 2*np.std(df_temp['p4']))*1e6, facecolor='darkorchid', alpha=0.2)
+    #axs[1,2].axhspan(upper_cut[6], lower_cut[6], facecolor='darkorchid', alpha=0.2)
 
-    axs[0,3].errorbar(num, df['p2'], yerr=df['Error_p2'], fmt='o')
-    axs[0,3].errorbar(num_temp, df_temp['p2'], yerr=df_temp['Error_p2'], fmt='p')
+    #axs[0,3].errorbar(num, df['p2'], yerr=df['Error_p2'], fmt='o')
+    axs[0,3].errorbar(num_temp, df_temp['p2'], yerr=df_temp['Error_p2'], fmt='p', color='deeppink')
     axs[0,3].set_title('P2',fontsize=20)
     axs[0,3].tick_params(axis='x', labelsize=14)
     axs[0,3].tick_params(axis='y', labelsize=14)
-    axs[0,3].set_ylabel('Value', fontsize = 16)
+    axs[0,3].set_ylabel(r'$p_2$ [$^\circ \rm C$]', fontsize = 16)
     axs[0,3].grid(linestyle='dotted')
-    axs[0,3].axhspan(upper_cut[4], lower_cut[4], facecolor='deeppink', alpha=0.2)
+    axs[0,3].axhspan(np.mean(df_temp['p2']) + 2*np.std(df_temp['p2']), np.mean(df_temp['p2']) - 2*np.std(df_temp['p2']), facecolor='deeppink', alpha=0.2)
+    #axs[0,3].axhspan(upper_cut[4], lower_cut[4], facecolor='deeppink', alpha=0.2)
 
-    axs[1,3].errorbar(num, df['p5'], yerr=df['Error_p5'], fmt='o')
-    axs[1,3].errorbar(num_temp, df_temp['p5'], yerr=df_temp['Error_p5'], fmt='p')
+    #axs[1,3].errorbar(num, df['p5'], yerr=df['Error_p5'], fmt='o')
+    axs[1,3].errorbar(num_temp, df_temp['p5'], yerr=df_temp['Error_p5'], fmt='p', color='deeppink')
     axs[1,3].set_title('P5',fontsize=20)
     axs[1,3].tick_params(axis='x', labelsize=14)
     axs[1,3].tick_params(axis='y', labelsize=14)
     axs[1,3].set_xlabel('HVBoard ID', fontsize = 16)
-    axs[1,3].set_ylabel('Value', fontsize = 16)
+    axs[1,3].set_ylabel(r'$p_5$ [$^\circ \rm C$]', fontsize = 16)
     axs[1,3].grid(linestyle='dotted')
-    axs[1,3].axhspan(upper_cut[7], lower_cut[7], facecolor='deeppink', alpha=0.2)
-    #'''
+    axs[1,3].axhspan(np.mean(df_temp['p5']) + 2*np.std(df_temp['p5']), np.mean(df_temp['p5']) - 2*np.std(df_temp['p5']), facecolor='deeppink', alpha=0.2)
+    #axs[1,3].axhspan(upper_cut[7], lower_cut[7], facecolor='deeppink', alpha=0.2)
+    ''' #comment to zoon-in in a particular region
     a = 10
     axs[0,0].set_xlim(a + 0.5,a + 10.5)
     axs[0,1].set_xlim(a + 0.5,a + 10.5)
@@ -904,7 +912,7 @@ def get_acceptance_limits(df_temp):
     axs[1,2].set_xlim(a + 0.5,a + 10.5)
     axs[1,3].set_xlim(a + 0.5,a + 10.5)
     #'''
-    fig.set_size_inches(22, 11.5, forward=True)
+    fig.set_size_inches(24, 11.5, forward=True)
     plt.savefig(f'/home/stephy/ICECUBE/undershoot/20200609/acceptance_limits.png', bbox_inches='tight')
     plt.savefig(f'/home/stephy/ICECUBE/undershoot/20200609/acceptance_limits.svg', bbox_inches='tight')
     plt.show()
@@ -986,20 +994,81 @@ def linearity_droop_undershoot(df):
     #plt.cla()
     #plt.close()
 
+def model_temp(x, A, B, C):
+	return (A + B/(1+np.exp(-x/C)))
+
+def temp_fit(x, y):
+	gmodel = Model(model_temp, calc_covar=True)
+	params = gmodel.make_params(A=5E-6, B=40E-6, C=30)#unit [us]
+	result = gmodel.fit(y, params, x=x)
+	print(result.fit_report())
+	p_A = result.params['A'].value
+	sp_A = result.params['A'].stderr
+	p_B = result.params['B'].value
+	sp_B = result.params['B'].stderr
+	p_C = result.params['C'].value
+	sp_C = result.params['C'].stderr
+	chi2 = result.chisqr
+	covar_matrix = result.covar
+	return p_A, sp_A, p_B, sp_B, p_C, sp_C, chi2, covar_matrix, result.best_fit
+
+
+def temperature_droop_undershoot(df):
+    p_0, sp_0, p_1, sp_1, p_2, sp_2, chi2_droop, covar_matrix_droop, result_droop = temp_fit(df['Real_temperature'], df['Tau_droop'])
+    p_3, sp_3, p_4, sp_4, p_5, sp_5, chi2_undershoot, covar_matrix_undershoot, result_undershoot = temp_fit(df['Real_temperature'], df['Tau_undershoot'])
+
+    print('\n Droop:', p_0, sp_0, p_1, sp_1, p_2, sp_2, '\n')
+    print('\n Undershoot:', p_3, sp_3, p_4, sp_4, p_5, sp_5, '\n')
+    x = np.linspace(-58.2, 4.9, 1000)
+    y_droop = model_temp(x, p_0, p_1, p_2)
+    y_undershoot = model_temp(x, p_3, p_4, p_5)
+
+    fig, axs = plt.subplots(1, 2)
+    #fig.suptitle('Summary of variables for 607 High Voltage Boards', fontsize=22)
+
+    axs[0].plot(df['Real_temperature'], df['Tau_droop']*1e6, 'o', ms=1, label='Data 607 HVBs')
+    axs[0].plot(x, y_droop*1e6, '-', ms=1, label='Temperature fit')
+    axs[0].set_title(r'$\tau_{\rm droop}$ vs Temperature',fontsize=16)
+    axs[0].tick_params(axis='x', labelsize=14)
+    axs[0].tick_params(axis='y', labelsize=14)
+    axs[0].set_xlabel(r'Temperature [$^\circ \rm C$]', fontsize = 16)
+    axs[0].set_ylabel(r'$\tau_{\rm droop}$ [$\mu \rm s$]', fontsize = 16)
+    axs[0].grid(linestyle='dotted')
+    axs[0].legend(loc='best')
+
+    axs[1].plot(df['Real_temperature'], df['Tau_undershoot']*1e6, 'p', ms=1, label='Data 607 HVBs')
+    axs[1].plot(x, y_undershoot*1e6, '-', ms=1, label='Temperature fit')
+    axs[1].set_title(r'$\tau_{\rm undershoot}$ vs Temperature',fontsize=16)
+    axs[1].tick_params(axis='x', labelsize=14)
+    axs[1].tick_params(axis='y', labelsize=14)
+    axs[1].set_xlabel(r'Temperature [$^\circ \rm C$]', fontsize = 16)
+    axs[1].set_ylabel(r'$\tau_{\rm undershoot}$ [$\mu \rm s$]', fontsize = 16)
+    axs[1].grid(linestyle='dotted')
+    axs[1].legend(loc='best')
+
+    fig.set_size_inches(14, 6, forward=True)
+    plt.savefig(f'/home/stephy/ICECUBE/undershoot/20200609/temperature_global.png', bbox_inches='tight')
+    #plt.savefig(f'/home/stephy/ICECUBE/undershoot/20200609/temperature_global.svg', bbox_inches='tight')
+    #plt.show()
+    plt.clf()
+    plt.cla()
+    plt.close()
+
 
 def main():
     droop_undershoot_file = '/home/stephy/ICECUBE/undershoot/20200609/Results_droop_undershoot.h5'
     df = load_dataframe(droop_undershoot_file)
     #linearity_droop_undershoot(df)
+    temperature_droop_undershoot(df)
 
-    outliers_df, non_outlier_df = amplitude_analysis(df, 1)#To generate plots use 1
+    #outliers_df, non_outlier_df = amplitude_analysis(df, 1)#To generate plots use 1
     #temp_HVB(df, outliers_df)
     #print(np.unique(outliers_df.index.get_level_values('Board_ID')))
 
-    temperature_file = '/home/stephy/ICECUBE/undershoot/20200609/Results_DroopUndershootTemperature.h5'
-    df_temp = load_dataframe(temperature_file)
-    df_temp, df_weird = remove_weird_fits_error(df_temp)
-    analysis_AlphaBeta(df_temp, outliers_df, non_outlier_df)
+    #temperature_file = '/home/stephy/ICECUBE/undershoot/20200609/Results_DroopUndershootTemperature.h5'
+    #df_temp = load_dataframe(temperature_file)
+    #df_temp, df_weird = remove_weird_fits_error(df_temp)
+    #analysis_AlphaBeta(df_temp, outliers_df, non_outlier_df)
     #analysis_p0p1p2(df_temp, outliers_df)
     #analysis_p3p4p5(df_temp, outliers_df)
     #get_acceptance_limits(df_temp.loc[(df_temp['Board_ID'] != 'HVB_582') & (df_temp['Board_ID'] != 'HVB_138')])
