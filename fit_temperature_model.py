@@ -75,6 +75,8 @@ def load_dataframe():
 	fit_report = '/home/stephy/ICECUBE/undershoot/20200609/Results_droop_undershoot.h5'
 	if os.path.isfile(fit_report):
 		df = pd.read_hdf(fit_report)
+		df.set_index("Batch", append=True, inplace=True)
+		df.index = df.index.reorder_levels(['Board_ID', 'Batch', 'Waveform_number'])
 		print('The columns in this dataframe are:', df.columns)
 		return df
 	else:
@@ -83,8 +85,7 @@ def load_dataframe():
 
 def droop_undershoot():
 	df = load_dataframe()
-	sum = df.reset_index().groupby('Board_ID').count()#sum[0]=HVB_1
-	HV_Boards = sum.index
+
 	alpha = []
 	salpha = []
 	beta = []
@@ -95,39 +96,41 @@ def droop_undershoot():
 	df_channel = []
 	df_temperature = []
 	df_batch = []
-	for HVB in HV_Boards:
-		locate = df.loc[HVB]
-		board_id.append(HVB)
-		Td = locate['Tau_droop']
-		Tu = locate['Tau_undershoot']
-		Ch = locate['Channel']
-		Temp = locate['Real_temperature']
-		bh = locate['Batch']
-		u_ch = np.unique(Ch)
-		if len(u_ch) == 1 and len(np.unique(bh)) == 1:
-			bh = bh[0]
-			u_ch = u_ch[0]
-		else:
-			print(f'Channels found for {HVB}: {np.unique(Ch)}')
-			print(f'Batches found for  {HVB}: {np.unique(bh)}')
-			raise ValueError('HVB has multiple channels, please check dataframe!')
-		df_channel.append(u_ch)
-		inter_temp = np.unique(Temp)
-		df_temperature.append(inter_temp.tolist())
-		df_batch.append(np.unique(bh))
-		a, sa, b, sb, c, cov, best_fit = line_fit(Tu, Td)
-		alpha.append(a)
-		salpha.append(sa)
-		beta.append(b)
-		sbeta.append(sb)
-		chi2.append(c)
-		covar_matrix.append(cov.tolist())
-		plot_results_droop_undershoot(HVB, Tu, Td, best_fit, a, b)
+	batch_values = np.unique(df.index.get_level_values('Batch')) #batches 4 and 5 are an extension to batch 3
+	for batch in batch_values:
+		df_Batch = df[df.index.get_level_values('Batch').isin([batch])]
+		sum = df_Batch.reset_index().groupby('Board_ID').count() #sum[0]=HVB_1
+		HV_Boards = sum.index
+		for HVB in HV_Boards:
+			locate = df_Batch.loc[HVB]
+			board_id.append(HVB)
+			Td = locate['Tau_droop']
+			Tu = locate['Tau_undershoot']
+			Ch = locate['Channel']
+			Temp = locate['Real_temperature']
+			u_ch = np.unique(Ch)
+			if len(u_ch) == 1:
+				u_ch = u_ch[0]
+			else:
+				print(f'Channels found for {HVB}: {np.unique(Ch)}')
+				raise ValueError('HVB has multiple channels, please check dataframe!')
+			df_channel.append(u_ch)
+			inter_temp = np.unique(Temp)
+			df_temperature.append(inter_temp.tolist())
+			df_batch.append(batch)
+			a, sa, b, sb, c, cov, best_fit = line_fit(Tu, Td)
+			alpha.append(a)
+			salpha.append(sa)
+			beta.append(b)
+			sbeta.append(sb)
+			chi2.append(c)
+			covar_matrix.append(cov.tolist())
+			plot_results_droop_undershoot(HVB, Tu, Td, best_fit, a, b, batch)
 	DroopVsUndershoot = [board_id, df_channel, df_temperature, df_batch, alpha, salpha, beta, sbeta, chi2, covar_matrix]
 	return DroopVsUndershoot
 
 
-def plot_results_droop_undershoot(Directory_board, tau_under, tau_droop, best_fit, alpha, beta):
+def plot_results_droop_undershoot(Directory_board, tau_under, tau_droop, best_fit, alpha, beta, batch):
 	plt.ylabel(r'Droop ($\mu$s)')
 	plt.xlabel(r'Undershoot ($\mu$s)')
 	if beta < 0:
@@ -138,8 +141,8 @@ def plot_results_droop_undershoot(Directory_board, tau_under, tau_droop, best_fi
 	plt.plot(tau_under*1E6, best_fit*1E6, ms=20, alpha=0.5)
 	plt.legend(loc='best')
 	plt.grid(linestyle='dotted')
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/png/{}_DroopUndershoot.png'.format(Directory_board))
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/svg/{}_DroopUndershoot.svg'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/png/{0}_B{1}_DroopUndershoot.png'.format(Directory_board, np.int(batch)))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopUndershoot/svg/{0}_B{1}_DroopUndershoot.svg'.format(Directory_board, np.int(batch)))
 	#plt.show()
 	plt.clf()
 	plt.cla()
@@ -148,8 +151,6 @@ def plot_results_droop_undershoot(Directory_board, tau_under, tau_droop, best_fi
 
 def droop_temperature():
 	df = load_dataframe()
-	sum = df.reset_index().groupby('Board_ID').count()#sum[0]=HVB_1
-	HV_Boards = sum.index
 	p0 = []
 	sp0 = []
 	p1 = []
@@ -158,35 +159,44 @@ def droop_temperature():
 	sp2 = []
 	chi2 = []
 	covar_matrix = []
-	for HVB in HV_Boards:
-		locate = df.loc[HVB]
-		Td = locate['Tau_droop']
-		Temp = locate['Real_temperature']
-		pA, spA, pB, spB, pC, spC, c, cov, best_fit = temp_fit(Temp, Td)
-		p0.append(pA)
-		sp0.append(spA)
-		p1.append(pB)
-		sp1.append(spB)
-		p2.append(pC)
-		sp2.append(spC)
-		chi2.append(c)
-		covar_matrix.append(cov.tolist())
-		plot_results_droop_temperature(HVB, Temp, Td, best_fit, pA, pB, pC)
+
+	batch_values = np.unique(df.index.get_level_values('Batch')) #batches 4 and 5 are an extension to batch 3
+	for batch in batch_values:
+		df_Batch = df[df.index.get_level_values('Batch').isin([batch])]
+		sum = df_Batch.reset_index().groupby('Board_ID').count() #sum[0]=HVB_1
+		HV_Boards = sum.index
+		for HVB in HV_Boards:
+			locate = df_Batch.loc[HVB]
+			Td = locate['Tau_droop']
+			Temp = locate['Real_temperature']
+			pA, spA, pB, spB, pC, spC, c, cov, best_fit = temp_fit(Temp, Td)
+			p0.append(pA)
+			sp0.append(spA)
+			p1.append(pB)
+			sp1.append(spB)
+			p2.append(pC)
+			sp2.append(spC)
+			chi2.append(c)
+			covar_matrix.append(cov.tolist())
+			plot_results_droop_temperature(HVB, Temp, Td, best_fit, pA, pB, pC, batch)
 	DroopVsTemp = [p0, sp0, p1, sp1, p2, sp2, chi2, covar_matrix]
 	return DroopVsTemp
 
 
-def plot_results_droop_temperature(Directory_board, temp, tau_droop, best_fit, p0, p1, p2):
+def plot_results_droop_temperature(Directory_board, temp, tau_droop, best_fit, p0, p1, p2, batch):
+	temperature = np.unique(temp)
+	recovered_value = p0 + p1/(1+np.exp(-temperature/p2))
 	Temperature, TD, sTD = get_mean_std(temp, tau_droop)
 	plt.ylabel(r'%s ($\mu$s)' %('Droop'))
 	plt.xlabel(r'Temperature ($^\circ$C)')
-	plt.title(r'$\tau$(u) = %.1f + %.1f/(1+exp(T/%.1f))' %(p0*1E6, p1*1E6, p2))
+	plt.title(r'$\tau$(T) = %.1f + %.1f/(1+exp(T/%.1f))' %(p0*1E6, p1*1E6, p2))
 	plt.errorbar(Temperature, TD*1E6, yerr=sTD*1E6, fmt='o', ms=5, label='Directory_board-%s' %(Directory_board))
 	plt.plot(temp, best_fit*1E6, ms=25, alpha=0.5, label='Temp-droop fit')
+	plt.plot(temperature, recovered_value*1E6, 'ro', ms=5, label='Recovered Value')
 	plt.legend(loc='best')
 	plt.grid(linestyle='dotted')
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/png/{}_DroopTemperature.png'.format(Directory_board))
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/svg/{}_DroopTemperature.svg'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/png/{0}_B{1}_DroopTemperature.png'.format(Directory_board, np.int(batch)))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/DroopTemperature/svg/{0}_B{1}_DroopTemperature.svg'.format(Directory_board, np.int(batch)))
 	#plt.show()
 	plt.clf()
 	plt.cla()
@@ -195,8 +205,6 @@ def plot_results_droop_temperature(Directory_board, temp, tau_droop, best_fit, p
 
 def undershoot_temperature():
 	df = load_dataframe()
-	sum = df.reset_index().groupby('Board_ID').count()#sum[0]=HVB_1
-	HV_Boards = sum.index
 	p3 = []
 	sp3 = []
 	p4 = []
@@ -205,35 +213,43 @@ def undershoot_temperature():
 	sp5 = []
 	chi2 = []
 	covar_matrix = []
-	for HVB in HV_Boards:
-		locate = df.loc[HVB]
-		Tu = locate['Tau_undershoot']
-		Temp = locate['Real_temperature']
-		pA, spA, pB, spB, pC, spC, c, cov, best_fit = temp_fit(Temp, Tu)
-		p3.append(pA)
-		sp3.append(spA)
-		p4.append(pB)
-		sp4.append(spB)
-		p5.append(pC)
-		sp5.append(spC)
-		chi2.append(c)
-		covar_matrix.append(cov.tolist())
-		plot_results_undershoot_temperature(HVB, Temp, Tu, best_fit, pA, pB, pC)
+	batch_values = np.unique(df.index.get_level_values('Batch')) #batches 4 and 5 are an extension to batch 3
+	for batch in batch_values:
+		df_Batch = df[df.index.get_level_values('Batch').isin([batch])]
+		sum = df_Batch.reset_index().groupby('Board_ID').count() #sum[0]=HVB_1
+		HV_Boards = sum.index
+		for HVB in HV_Boards:
+			locate = df_Batch.loc[HVB]
+			Tu = locate['Tau_undershoot']
+			Temp = locate['Real_temperature']
+			pA, spA, pB, spB, pC, spC, c, cov, best_fit = temp_fit(Temp, Tu)
+			p3.append(pA)
+			sp3.append(spA)
+			p4.append(pB)
+			sp4.append(spB)
+			p5.append(pC)
+			sp5.append(spC)
+			chi2.append(c)
+			covar_matrix.append(cov.tolist())
+			plot_results_undershoot_temperature(HVB, Temp, Tu, best_fit, pA, pB, pC, batch)
 	UndershootVsTemp = [p3, sp3, p4, sp4, p5, sp5, chi2, covar_matrix]
 	return UndershootVsTemp
 
 
-def plot_results_undershoot_temperature(Directory_board, temp, tau_undershoot, best_fit, p3, p4, p5):
+def plot_results_undershoot_temperature(Directory_board, temp, tau_undershoot, best_fit, p3, p4, p5, batch):
+	temperature = np.unique(temp)
+	recovered_value = p3 + p4/(1+np.exp(-temperature/p5))
 	Temperature, TU, sTU = get_mean_std(temp, tau_undershoot)
 	plt.ylabel(r'%s ($\mu$s)' %('Undershoot'))
 	plt.xlabel(r'Temperature ($^\circ$C)')
-	plt.title(r'$\tau$(u) = %.1f + %.1f/(1+exp(T/%.1f))' %(p3*1E6, p4*1E6, p5))
+	plt.title(r'$\tau$(T) = %.1f + %.1f/(1+exp(T/%.1f))' %(p3*1E6, p4*1E6, p5))
 	plt.errorbar(Temperature, TU*1E6, yerr=sTU*1E6, fmt='o', ms=5, label='Directory_board-%s' %(Directory_board))
 	plt.plot(temp, best_fit*1E6, ms=25, alpha=0.5, label='Temp-droop fit')
+	plt.plot(temperature, recovered_value*1E6, 'ro', ms=5, label='Recovered Value')
 	plt.legend(loc='best')
 	plt.grid(linestyle='dotted')
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/png/{}_UndershootTemperature.png'.format(Directory_board))
-	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/svg/{}_UndershootTemperature.svg'.format(Directory_board))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/png/{0}_B{1}_UndershootTemperature.png'.format(Directory_board, np.int(batch)))
+	plt.savefig('/home/stephy/ICECUBE/undershoot/20200609/figures/UndershootTemperature/svg/{0}_B{1}_UndershootTemperature.svg'.format(Directory_board, np.int(batch)))
 	#plt.show()
 	plt.clf()
 	plt.cla()
@@ -244,6 +260,7 @@ def build_data_frame():
 	DroopVsUndershoot = droop_undershoot()
 	DroopVsTemp = droop_temperature()
 	UndershootVsTemp = undershoot_temperature()
+	print(np.shape(DroopVsUndershoot), np.shape(DroopVsTemp), np.shape(UndershootVsTemp))
 	data = np.concatenate((DroopVsUndershoot, DroopVsTemp, UndershootVsTemp)).T
 	df = pd.DataFrame(data, columns = ['Board_ID', 'Channel', 'Real_temperature',
 		'Batch', 'Alpha', 'Error_Alpha', 'Beta', 'Error_Beta', 'chi2_AlphaBeta',
